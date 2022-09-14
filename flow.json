@@ -520,7 +520,7 @@
         "stateUnit": "",
         "stateMin": "",
         "stateMax": "",
-        "x": 1160,
+        "x": 1120,
         "y": 140,
         "wires": []
     },
@@ -529,7 +529,7 @@
         "type": "subflow:5734cb6af7d23702",
         "z": "e9de432dbfd2a285",
         "name": "",
-        "x": 870,
+        "x": 830,
         "y": 140,
         "wires": [
             [
@@ -573,7 +573,7 @@
         "stateUnit": "",
         "stateMin": "",
         "stateMax": "",
-        "x": 1120,
+        "x": 1140,
         "y": 80,
         "wires": []
     },
@@ -582,7 +582,7 @@
         "type": "subflow:5734cb6af7d23702",
         "z": "e9de432dbfd2a285",
         "name": "",
-        "x": 830,
+        "x": 850,
         "y": 80,
         "wires": [
             [
@@ -626,9 +626,9 @@
         "id": "31716c21d3f492c1",
         "type": "amazon-echo-device",
         "z": "e9de432dbfd2a285",
-        "name": "Keyboard lighting",
+        "name": "Tastaturbeleuchtung",
         "topic": "Arduino Tastaturbeleuchtung",
-        "x": 590,
+        "x": 600,
         "y": 80,
         "wires": [
             [
@@ -641,9 +641,9 @@
         "id": "27eb4499b92b570d",
         "type": "amazon-echo-device",
         "z": "e9de432dbfd2a285",
-        "name": "Wall lighting on the bed",
+        "name": "Wandbeleuchtung",
         "topic": "Arduino Wandbeleuchtung am Bett",
-        "x": 610,
+        "x": 590,
         "y": 140,
         "wires": [
             [
@@ -656,7 +656,7 @@
         "id": "41bc62348c456fd0",
         "type": "amazon-echo-device",
         "z": "e9de432dbfd2a285",
-        "name": "Side lighting on the bed ",
+        "name": "seitliche Bettbeleuchtung",
         "topic": "Arduino seitliche Beleuchtung am Bett",
         "x": 610,
         "y": 200,
