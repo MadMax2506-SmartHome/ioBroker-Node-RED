@@ -735,37 +735,12 @@
         "id": "8e3a570421351147",
         "type": "alexa-say",
         "z": "e9de432dbfd2a285",
-        "name": "",
+        "name": "Hallo",
         "text": "Hallo",
         "x": 710,
         "y": 460,
         "wires": [
-            [
-                "3829f1eeb2a9e975"
-            ]
+            []
         ]
-    },
-    {
-        "id": "f0fd5ba93f771a54",
-        "type": "alexa-http launch",
-        "z": "e9de432dbfd2a285",
-        "name": "",
-        "skillConfig": "2f79b20f717b51dc",
-        "x": 110,
-        "y": 440,
-        "wires": [
-            [
-                "8e3a570421351147"
-            ]
-        ]
-    },
-    {
-        "id": "3829f1eeb2a9e975",
-        "type": "alexa-http response",
-        "z": "e9de432dbfd2a285",
-        "name": "",
-        "x": 880,
-        "y": 460,
-        "wires": []
     }
 ]
