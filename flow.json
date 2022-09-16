@@ -726,33 +726,8 @@
         "y": 540,
         "wires": [
             [
-                "5b9197b675ca929a",
-                "8e3a570421351147"
+                "5b9197b675ca929a"
             ]
-        ]
-    },
-    {
-        "id": "8e3a570421351147",
-        "type": "alexa-say",
-        "z": "e9de432dbfd2a285",
-        "name": "Hallo",
-        "text": "Hallo",
-        "x": 710,
-        "y": 460,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "18a0d58ee6d27812",
-        "type": "alexa-card",
-        "z": "e9de432dbfd2a285",
-        "name": "",
-        "cardjson": "{\n  \"type\": \"Simple\",\n  \"title\": \"My Simple Title\",\n  \"content\": \"My very simple content\"\n}",
-        "x": 110,
-        "y": 440,
-        "wires": [
-            []
         ]
     }
 ]
