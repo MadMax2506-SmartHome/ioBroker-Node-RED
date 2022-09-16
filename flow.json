@@ -742,5 +742,17 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "18a0d58ee6d27812",
+        "type": "alexa-card",
+        "z": "e9de432dbfd2a285",
+        "name": "",
+        "cardjson": "{\n  \"type\": \"Simple\",\n  \"title\": \"My Simple Title\",\n  \"content\": \"My very simple content\"\n}",
+        "x": 110,
+        "y": 440,
+        "wires": [
+            []
+        ]
     }
 ]
