@@ -4,7 +4,8 @@
     "version": "0.0.1",
     "dependencies": {
         "node-red-contrib-home-assistant-websocket": "0.44.0",
-        "node-red-contrib-amazon-echo": "0.1.10"
+        "node-red-contrib-amazon-echo": "0.1.10",
+        "node-red-dashboard": "3.2.0"
     },
     "node-red": {
         "settings": {
