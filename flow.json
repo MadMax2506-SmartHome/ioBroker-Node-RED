@@ -720,23 +720,6 @@
         "icon": "node-red/bridge.svg"
     },
     {
-        "id": "a5b0473ae5d86195",
-        "type": "ioBroker get",
-        "z": "e9de432dbfd2a285",
-        "name": "Test",
-        "topic": "alexa2.0.History.creationTime",
-        "attrname": "payload",
-        "payloadType": "value",
-        "errOnInvalidState": "nothing",
-        "x": 110,
-        "y": 560,
-        "wires": [
-            [
-                "5b9197b675ca929a"
-            ]
-        ]
-    },
-    {
         "id": "5b9197b675ca929a",
         "type": "debug",
         "z": "e9de432dbfd2a285",
@@ -749,9 +732,29 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 270,
+        "x": 450,
         "y": 560,
         "wires": [],
         "icon": "node-red/bridge.svg"
+    },
+    {
+        "id": "c0e3a037b776729d",
+        "type": "ioBroker in",
+        "z": "e9de432dbfd2a285",
+        "name": "",
+        "topic": "alexa2.0.History.creationTime",
+        "payloadType": "value",
+        "onlyack": "",
+        "func": "all",
+        "gap": "",
+        "fireOnStart": "false",
+        "outFormat": "MQTT",
+        "x": 160,
+        "y": 540,
+        "wires": [
+            [
+                "5b9197b675ca929a"
+            ]
+        ]
     }
 ]
