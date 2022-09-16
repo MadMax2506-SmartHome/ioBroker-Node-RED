@@ -231,7 +231,7 @@
         "type": "server",
         "name": "Alexa",
         "version": 4,
-        "addon": true,
+        "addon": false,
         "rejectUnauthorizedCerts": true,
         "ha_boolean": "y|yes|true|on|home|open",
         "connectionDelay": true,
@@ -512,7 +512,8 @@
         "wires": [
             [
                 "19b6b90843ad1f70",
-                "5654570231fe2c9b"
+                "5654570231fe2c9b",
+                "d7a63a1e383d7507"
             ]
         ]
     },
