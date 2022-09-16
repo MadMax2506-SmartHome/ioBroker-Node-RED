@@ -227,28 +227,6 @@
         }
     },
     {
-        "id": "1ba217d5ecfbf7c1",
-        "type": "server",
-        "name": "Alexa",
-        "version": 4,
-        "addon": false,
-        "rejectUnauthorizedCerts": true,
-        "ha_boolean": "y|yes|true|on|home|open",
-        "connectionDelay": true,
-        "cacheJson": true,
-        "heartbeat": false,
-        "heartbeatInterval": "30",
-        "areaSelector": "friendlyName",
-        "deviceSelector": "friendlyName",
-        "entitySelector": "friendlyName",
-        "statusSeparator": ": ",
-        "statusYear": "hidden",
-        "statusMonth": "short",
-        "statusDay": "numeric",
-        "statusHourCycle": "default",
-        "statusTimeFormat": "h:m"
-    },
-    {
         "id": "dbdce3880380f4e3",
         "type": "switch",
         "z": "5734cb6af7d23702",
