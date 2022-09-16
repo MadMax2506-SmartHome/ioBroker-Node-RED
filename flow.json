@@ -502,7 +502,7 @@
             [
                 "19b6b90843ad1f70",
                 "5654570231fe2c9b",
-                "17503a7196afdeeb"
+                "8e3a570421351147"
             ]
         ]
     },
@@ -687,39 +687,6 @@
         "icon": "node-red/bridge.svg"
     },
     {
-        "id": "17503a7196afdeeb",
-        "type": "amazon-echo-device",
-        "z": "e9de432dbfd2a285",
-        "name": "NAS",
-        "topic": "",
-        "x": 350,
-        "y": 440,
-        "wires": [
-            [
-                "2551e7d4a34ec225"
-            ]
-        ],
-        "icon": "node-red/leveldb.png"
-    },
-    {
-        "id": "2551e7d4a34ec225",
-        "type": "debug",
-        "z": "e9de432dbfd2a285",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 510,
-        "y": 440,
-        "wires": [],
-        "icon": "node-red/bridge.svg"
-    },
-    {
         "id": "5b9197b675ca929a",
         "type": "debug",
         "z": "e9de432dbfd2a285",
@@ -732,8 +699,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 450,
-        "y": 560,
+        "x": 530,
+        "y": 540,
         "wires": [],
         "icon": "node-red/bridge.svg"
     },
@@ -755,6 +722,18 @@
             [
                 "5b9197b675ca929a"
             ]
+        ]
+    },
+    {
+        "id": "8e3a570421351147",
+        "type": "alexa-say",
+        "z": "e9de432dbfd2a285",
+        "name": "",
+        "text": "Hallo",
+        "x": 710,
+        "y": 460,
+        "wires": [
+            []
         ]
     }
 ]
