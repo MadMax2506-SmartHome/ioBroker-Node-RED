@@ -123,17 +123,6 @@
         "icon": "node-red/swap.svg"
     },
     {
-        "id": "f5e617d674df64ed",
-        "type": "ui_group",
-        "name": "Standard",
-        "tab": "140dcbb93b137d2d",
-        "order": 1,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
-    },
-    {
         "id": "140dcbb93b137d2d",
         "type": "ui_tab",
         "name": "Home",
@@ -236,35 +225,6 @@
                 "py": 0
             }
         }
-    },
-    {
-        "id": "2f79b20f717b51dc",
-        "type": "alexa-skill",
-        "skillname": "Test",
-        "intents": "[\n  {\n    \"name\": \"SampleIntent\",\n    \"options\": {\n      \"slots\": {\n        \"NAME\": \"LITERAL\",\n        \"AGE\": \"NUMBER\"\n      },\n      \"utterances\": [\n        \"my {name is|name's} {names|NAME} and {I am|I'm} {1-100|AGE}{ years old|}\"\n      ]\n    }\n  }\n]",
-        "clientId": "needsADefault"
-    },
-    {
-        "id": "d5a1283b9916dcf8",
-        "type": "server",
-        "name": "Alexa",
-        "version": 4,
-        "addon": true,
-        "rejectUnauthorizedCerts": true,
-        "ha_boolean": "y|yes|true|on|home|open",
-        "connectionDelay": true,
-        "cacheJson": true,
-        "heartbeat": false,
-        "heartbeatInterval": "30",
-        "areaSelector": "friendlyName",
-        "deviceSelector": "friendlyName",
-        "entitySelector": "friendlyName",
-        "statusSeparator": ": ",
-        "statusYear": "hidden",
-        "statusMonth": "short",
-        "statusDay": "numeric",
-        "statusHourCycle": "default",
-        "statusTimeFormat": "h:m"
     },
     {
         "id": "dbdce3880380f4e3",
@@ -757,7 +717,7 @@
         "type": "api-get-history",
         "z": "e9de432dbfd2a285",
         "name": "",
-        "server": "d5a1283b9916dcf8",
+        "server": "",
         "version": 0,
         "startdate": "",
         "enddate": "",
