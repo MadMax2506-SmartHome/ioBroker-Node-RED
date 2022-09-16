@@ -238,6 +238,13 @@
         }
     },
     {
+        "id": "2f79b20f717b51dc",
+        "type": "alexa-skill",
+        "skillname": "Test",
+        "intents": "[\n  {\n    \"name\": \"SampleIntent\",\n    \"options\": {\n      \"slots\": {\n        \"NAME\": \"LITERAL\",\n        \"AGE\": \"NUMBER\"\n      },\n      \"utterances\": [\n        \"my {name is|name's} {names|NAME} and {I am|I'm} {1-100|AGE}{ years old|}\"\n      ]\n    }\n  }\n]",
+        "clientId": "needsADefault"
+    },
+    {
         "id": "dbdce3880380f4e3",
         "type": "switch",
         "z": "5734cb6af7d23702",
@@ -742,6 +749,7 @@
         "type": "alexa-http launch",
         "z": "e9de432dbfd2a285",
         "name": "",
+        "skillConfig": "2f79b20f717b51dc",
         "x": 110,
         "y": 440,
         "wires": [
