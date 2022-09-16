@@ -512,8 +512,7 @@
         "wires": [
             [
                 "19b6b90843ad1f70",
-                "5654570231fe2c9b",
-                "d7a63a1e383d7507"
+                "5654570231fe2c9b"
             ]
         ]
     },
@@ -734,48 +733,5 @@
                 "5b9197b675ca929a"
             ]
         ]
-    },
-    {
-        "id": "d7a63a1e383d7507",
-        "type": "api-get-history",
-        "z": "e9de432dbfd2a285",
-        "name": "",
-        "server": "1ba217d5ecfbf7c1",
-        "version": 0,
-        "startdate": "",
-        "enddate": "",
-        "entityid": "",
-        "entityidtype": "is",
-        "useRelativeTime": false,
-        "relativeTime": "",
-        "flatten": true,
-        "output_type": "array",
-        "output_location_type": "msg",
-        "output_location": "payload",
-        "x": 490,
-        "y": 440,
-        "wires": [
-            [
-                "96d8b9ac24995463"
-            ]
-        ]
-    },
-    {
-        "id": "96d8b9ac24995463",
-        "type": "debug",
-        "z": "e9de432dbfd2a285",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 650,
-        "y": 440,
-        "wires": [],
-        "icon": "node-red/bridge.svg"
     }
 ]
