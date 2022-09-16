@@ -245,6 +245,28 @@
         "clientId": "needsADefault"
     },
     {
+        "id": "d5a1283b9916dcf8",
+        "type": "server",
+        "name": "Alexa",
+        "version": 4,
+        "addon": true,
+        "rejectUnauthorizedCerts": true,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": false,
+        "heartbeatInterval": "30",
+        "areaSelector": "friendlyName",
+        "deviceSelector": "friendlyName",
+        "entitySelector": "friendlyName",
+        "statusSeparator": ": ",
+        "statusYear": "hidden",
+        "statusMonth": "short",
+        "statusDay": "numeric",
+        "statusHourCycle": "default",
+        "statusTimeFormat": "h:m"
+    },
+    {
         "id": "dbdce3880380f4e3",
         "type": "switch",
         "z": "5734cb6af7d23702",
@@ -728,6 +750,29 @@
             [
                 "5b9197b675ca929a"
             ]
+        ]
+    },
+    {
+        "id": "7aa360f636eac627",
+        "type": "api-get-history",
+        "z": "e9de432dbfd2a285",
+        "name": "",
+        "server": "d5a1283b9916dcf8",
+        "version": 0,
+        "startdate": "",
+        "enddate": "",
+        "entityid": "",
+        "entityidtype": "is",
+        "useRelativeTime": false,
+        "relativeTime": "",
+        "flatten": true,
+        "output_type": "array",
+        "output_location_type": "msg",
+        "output_location": "payload",
+        "x": 770,
+        "y": 480,
+        "wires": [
+            []
         ]
     }
 ]
