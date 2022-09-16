@@ -521,7 +521,8 @@
         "y": 140,
         "wires": [
             [
-                "029b6f6a6aa28bf8"
+                "029b6f6a6aa28bf8",
+                "5654570231fe2c9b"
             ]
         ]
     },
@@ -574,7 +575,8 @@
         "y": 80,
         "wires": [
             [
-                "200b47dbe90241b9"
+                "200b47dbe90241b9",
+                "5654570231fe2c9b"
             ]
         ]
     },
@@ -606,7 +608,8 @@
         "y": 200,
         "wires": [
             [
-                "f287cf33cfc228fd"
+                "f287cf33cfc228fd",
+                "5654570231fe2c9b"
             ]
         ]
     },
@@ -654,5 +657,23 @@
             ]
         ],
         "icon": "node-red/light.svg"
+    },
+    {
+        "id": "5654570231fe2c9b",
+        "type": "debug",
+        "z": "e9de432dbfd2a285",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1070,
+        "y": 320,
+        "wires": [],
+        "icon": "node-red/bridge.svg"
     }
 ]
