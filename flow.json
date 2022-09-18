@@ -1052,7 +1052,7 @@
         "type": "function",
         "z": "c568e9a555f7d908",
         "name": "prepare data",
-        "func": "const {\n    objectKey,\n    payload: {\n        status,\n        color,\n        orientation,\n        typ,\n        time\n    }\n} = msg;\n\nreturn [\n    { topic: `${objectKey}.active`, payload: status },\n    { topic: `${objectKey}.animation_time`, payload: time },\n    { topic: `${objectKey}.animation_typ`, payload: typ },\n    { topic: `${objectKey}.color`, payload: JSON.stringify(color) },\n    { topic: `${objectKey}.orientation`, payload: orientation }\n];",
+        "func": "const {\n    objectKey,\n    payload: {\n        status,\n        color,\n        orientation,\n        type,\n        time\n    }\n} = msg;\n\nreturn [\n    { topic: `${objectKey}.active`, payload: status },\n    { topic: `${objectKey}.animation_time`, payload: time },\n    { topic: `${objectKey}.animation_typ`, payload: type },\n    { topic: `${objectKey}.color`, payload: JSON.stringify(color) },\n    { topic: `${objectKey}.orientation`, payload: orientation }\n];",
         "outputs": 5,
         "noerr": 0,
         "initialize": "",
