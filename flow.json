@@ -965,7 +965,7 @@
         "type": "function",
         "z": "8706d1775ed872de",
         "name": "prepare data",
-        "func": "const { key, payload } = msg;\nconst {\n    status,\n    color,\n    orientation,\n    animationTyp,\n    animationTime\n} = payload;\n\nreturn [\n    { key: `${key}.active`, payload: status === \"active\" },\n    { key: `${key}.animation_time`, payload: animationTime },\n    { key: `${key}.animation_typ`, payload: animationTyp },\n    { key: `${key}.color`, payload: JSON.stringify(color) },\n    { key: `${key}.orientation`, payload: orientation }\n];",
+        "func": "const { key, payload } = msg;\nconst {\n    status,\n    color,\n    orientation,\n    animationTyp,\n    animationTime\n} = payload;\n\nreturn [\n    { topic: `${key}.active`, payload: status === \"active\" },\n    { topic: `${key}.animation_time`, payload: animationTime },\n    { topic: `${key}.animation_typ`, payload: animationTyp },\n    { topic: `${key}.color`, payload: JSON.stringify(color) },\n    { topic: `${key}.orientation`, payload: orientation }\n];",
         "outputs": 5,
         "noerr": 0,
         "initialize": "",
@@ -975,19 +975,24 @@
         "y": 400,
         "wires": [
             [
-                "3d458690b0b72313"
+                "3d458690b0b72313",
+                "34f6a7ebcd73c961"
             ],
             [
-                "3d458690b0b72313"
+                "3d458690b0b72313",
+                "34f6a7ebcd73c961"
             ],
             [
-                "3d458690b0b72313"
+                "3d458690b0b72313",
+                "34f6a7ebcd73c961"
             ],
             [
-                "3d458690b0b72313"
+                "3d458690b0b72313",
+                "34f6a7ebcd73c961"
             ],
             [
-                "3d458690b0b72313"
+                "3d458690b0b72313",
+                "34f6a7ebcd73c961"
             ]
         ],
         "outputLabels": [
@@ -1011,8 +1016,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 730,
-        "y": 400,
+        "x": 790,
+        "y": 420,
         "wires": []
     },
     {
@@ -1058,5 +1063,24 @@
                 "a6751e45e2a88696"
             ]
         ]
+    },
+    {
+        "id": "34f6a7ebcd73c961",
+        "type": "ioBroker out",
+        "z": "8706d1775ed872de",
+        "name": "device-value",
+        "topic": "",
+        "ack": "false",
+        "autoCreate": "false",
+        "stateName": "",
+        "role": "",
+        "payloadType": "",
+        "readonly": "",
+        "stateUnit": "",
+        "stateMin": "",
+        "stateMax": "",
+        "x": 810,
+        "y": 380,
+        "wires": []
     }
 ]
