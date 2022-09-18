@@ -680,7 +680,7 @@
         "z": "e9de432dbfd2a285",
         "name": "mqtt-topic",
         "topic": "0_userdata.0.mqtt-devices.Tastaturbeleuchtung.topic",
-        "attrname": "",
+        "attrname": "payload",
         "payloadType": "value",
         "errOnInvalidState": "true",
         "x": 1160,
