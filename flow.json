@@ -140,7 +140,7 @@
         "category": "mqtt-devices",
         "in": [
             {
-                "x": 60,
+                "x": 40,
                 "y": 160,
                 "wires": [
                     {
@@ -151,7 +151,7 @@
         ],
         "out": [
             {
-                "x": 1330,
+                "x": 1410,
                 "y": 40,
                 "wires": [
                     {
@@ -161,7 +161,7 @@
                 ]
             },
             {
-                "x": 1360,
+                "x": 1440,
                 "y": 100,
                 "wires": [
                     {
@@ -171,7 +171,7 @@
                 ]
             },
             {
-                "x": 1360,
+                "x": 1440,
                 "y": 160,
                 "wires": [
                     {
@@ -181,7 +181,7 @@
                 ]
             },
             {
-                "x": 1330,
+                "x": 1410,
                 "y": 220,
                 "wires": [
                     {
@@ -191,7 +191,7 @@
                 ]
             },
             {
-                "x": 1350,
+                "x": 1430,
                 "y": 280,
                 "wires": [
                     {
@@ -216,7 +216,7 @@
     {
         "id": "c568e9a555f7d908",
         "type": "subflow",
-        "name": "extract values from light configuration",
+        "name": "extract light configuration",
         "info": "",
         "category": "",
         "in": [
@@ -949,7 +949,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 200,
+        "x": 180,
         "y": 160,
         "wires": [
             [
@@ -966,7 +966,7 @@
         "attrname": "payload",
         "payloadType": "value",
         "errOnInvalidState": "nothing",
-        "x": 400,
+        "x": 380,
         "y": 160,
         "wires": [
             [
@@ -985,7 +985,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 590,
+        "x": 570,
         "y": 160,
         "wires": [
             [
@@ -1006,11 +1006,11 @@
         "rap": true,
         "rh": 0,
         "inputs": 1,
-        "x": 760,
+        "x": 740,
         "y": 160,
         "wires": [
             [
-                "3212856150f0966d"
+                "623d6196ab127694"
             ]
         ]
     },
@@ -1018,7 +1018,7 @@
         "id": "3212856150f0966d",
         "type": "subflow:c568e9a555f7d908",
         "z": "6e07c8ed867b3ea9",
-        "x": 1010,
+        "x": 1150,
         "y": 160,
         "wires": [
             [],
@@ -1029,11 +1029,30 @@
         ]
     },
     {
+        "id": "623d6196ab127694",
+        "type": "function",
+        "z": "6e07c8ed867b3ea9",
+        "name": "insert objectKey",
+        "func": "const objectKey = flow.get(\"objectKey\");\nreturn {\n    ...msg,\n    objectKey: objectKey\n};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 160,
+        "wires": [
+            [
+                "3212856150f0966d"
+            ]
+        ]
+    },
+    {
         "id": "93586914e27d9823",
         "type": "function",
         "z": "c568e9a555f7d908",
         "name": "prepare data",
-        "func": "const objectKey = flow.get(\"objectKey\");\n\nconst { payload } = msg;\nconst {\n    status,\n    color,\n    orientation,\n    typ,\n    time\n} = payload;\n\nreturn [\n    { topic: `${objectKey}.active`, payload: status },\n    { topic: `${objectKey}.animation_time`, payload: time },\n    { topic: `${objectKey}.animation_typ`, payload: typ },\n    { topic: `${objectKey}.color`, payload: JSON.stringify(color) },\n    { topic: `${objectKey}.orientation`, payload: orientation }\n];",
+        "func": "const { objectKey, payload } = msg;\nconst {\n    status,\n    color,\n    orientation,\n    typ,\n    time\n} = payload;\n\nreturn [\n    { topic: `${objectKey}.active`, payload: status },\n    { topic: `${objectKey}.animation_time`, payload: time },\n    { topic: `${objectKey}.animation_typ`, payload: typ },\n    { topic: `${objectKey}.color`, payload: JSON.stringify(color) },\n    { topic: `${objectKey}.orientation`, payload: orientation }\n];",
         "outputs": 5,
         "noerr": 0,
         "initialize": "",
