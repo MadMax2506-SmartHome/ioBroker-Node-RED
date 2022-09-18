@@ -195,30 +195,6 @@
         "icon": "node-red/bridge.svg"
     },
     {
-        "id": "3f60c6b39ab30602",
-        "type": "subflow",
-        "name": "keyboard light reciever",
-        "info": "",
-        "category": "",
-        "in": [],
-        "out": [
-            {
-                "x": 960,
-                "y": 60,
-                "wires": [
-                    {
-                        "id": "02a20a63632fa5b0",
-                        "port": 0
-                    }
-                ]
-            }
-        ],
-        "env": [],
-        "meta": {},
-        "color": "#FFAAAA",
-        "icon": "node-red/link-out.svg"
-    },
-    {
         "id": "140dcbb93b137d2d",
         "type": "ui_tab",
         "name": "Home",
@@ -787,145 +763,6 @@
         "wires": []
     },
     {
-        "id": "b58f303274fa1867",
-        "type": "ioBroker get",
-        "z": "3f60c6b39ab30602",
-        "name": "device-id",
-        "topic": "0_userdata.0.mqtt-devices.Tastaturbeleuchtung.id",
-        "attrname": "mqttTopic",
-        "payloadType": "value",
-        "errOnInvalidState": "nothing",
-        "x": 280,
-        "y": 60,
-        "wires": [
-            [
-                "1536fc7b3a87ffbf",
-                "5a6a7b339782ae3d"
-            ]
-        ]
-    },
-    {
-        "id": "f3cf6ce1ba12712f",
-        "type": "function",
-        "z": "3f60c6b39ab30602",
-        "name": "parse",
-        "func": "return {\n    topic: msg.mqttTopic\n}",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 470,
-        "y": 60,
-        "wires": [
-            [
-                "5a6a7b339782ae3d"
-            ]
-        ]
-    },
-    {
-        "id": "1536fc7b3a87ffbf",
-        "type": "mqtt in",
-        "z": "3f60c6b39ab30602",
-        "name": "device status",
-        "topic": "",
-        "qos": "2",
-        "datatype": "utf8",
-        "broker": "9b5dc2b3a2f9fa7c",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 1,
-        "x": 650,
-        "y": 60,
-        "wires": [
-            [
-                "02a20a63632fa5b0"
-            ]
-        ]
-    },
-    {
-        "id": "5a6a7b339782ae3d",
-        "type": "debug",
-        "z": "3f60c6b39ab30602",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 650,
-        "y": 200,
-        "wires": []
-    },
-    {
-        "id": "02a20a63632fa5b0",
-        "type": "function",
-        "z": "3f60c6b39ab30602",
-        "name": "parse",
-        "func": "const { payload } = msg;\nreturn { ...payload }",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 830,
-        "y": 60,
-        "wires": [
-            [
-                "5a6a7b339782ae3d"
-            ]
-        ]
-    },
-    {
-        "id": "ebe03b7602c0d47c",
-        "type": "inject",
-        "z": "3f60c6b39ab30602",
-        "name": "empty object",
-        "props": [
-            {
-                "p": "t",
-                "v": "a",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 110,
-        "y": 60,
-        "wires": [
-            [
-                "b58f303274fa1867"
-            ]
-        ]
-    },
-    {
-        "id": "200a2c980308572d",
-        "type": "ioBroker in",
-        "z": "3f60c6b39ab30602",
-        "name": "value",
-        "topic": "0_userdata.0.mqtt-devices.Tastaturbeleuchtung.id",
-        "payloadType": "value",
-        "onlyack": "",
-        "func": "all",
-        "gap": "",
-        "fireOnStart": "false",
-        "outFormat": "MQTT",
-        "x": 170,
-        "y": 200,
-        "wires": [
-            [
-                "5a6a7b339782ae3d"
-            ]
-        ]
-    },
-    {
         "id": "0e87eb94338d50e5",
         "type": "amazon-echo-hub",
         "z": "e9de432dbfd2a285",
@@ -1073,97 +910,6 @@
         "wires": []
     },
     {
-        "id": "c7e91e59bff51304",
-        "type": "ioBroker get",
-        "z": "43be9f181fabd3e8",
-        "name": "device-id",
-        "topic": "0_userdata.0.mqtt-devices.Tastaturbeleuchtung.id",
-        "attrname": "mqttTopic",
-        "payloadType": "value",
-        "errOnInvalidState": "nothing",
-        "x": 280,
-        "y": 60,
-        "wires": [
-            [
-                "f48c895ace83c757"
-            ]
-        ]
-    },
-    {
-        "id": "a581f40ed6be1755",
-        "type": "function",
-        "z": "43be9f181fabd3e8",
-        "name": "parse",
-        "func": "return {\n    topic: msg.mqttTopic\n}",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 470,
-        "y": 60,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "f48c895ace83c757",
-        "type": "mqtt in",
-        "z": "43be9f181fabd3e8",
-        "name": "device status",
-        "topic": "",
-        "qos": "2",
-        "datatype": "json",
-        "broker": "9b5dc2b3a2f9fa7c",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 1,
-        "x": 650,
-        "y": 60,
-        "wires": [
-            [
-                "6bb92de4e72d4c85"
-            ]
-        ]
-    },
-    {
-        "id": "6bb92de4e72d4c85",
-        "type": "function",
-        "z": "43be9f181fabd3e8",
-        "name": "parse",
-        "func": "const { payload } = msg;\nreturn { ...payload }",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 830,
-        "y": 60,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "39ce844024df1bde",
-        "type": "inject",
-        "z": "43be9f181fabd3e8",
-        "name": "empty object",
-        "props": [],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 110,
-        "y": 60,
-        "wires": [
-            [
-                "c7e91e59bff51304"
-            ]
-        ]
-    },
-    {
         "id": "6c4d1adddfb1cb6a",
         "type": "mqtt in",
         "z": "43be9f181fabd3e8",
@@ -1176,16 +922,35 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 190,
-        "y": 180,
+        "x": 90,
+        "y": 220,
         "wires": [
             [
-                "69209804653b296b"
+                "5bf22605b46adc1f"
             ]
         ]
     },
     {
-        "id": "69209804653b296b",
+        "id": "5bf22605b46adc1f",
+        "type": "function",
+        "z": "43be9f181fabd3e8",
+        "name": "parse",
+        "func": "const { topic, payload } = msg;\nreturn {\n    topic: topic,\n    payload: payload\n};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 220,
+        "wires": [
+            [
+                "30d644030b1bd7f0"
+            ]
+        ]
+    },
+    {
+        "id": "30d644030b1bd7f0",
         "type": "debug",
         "z": "43be9f181fabd3e8",
         "name": "",
@@ -1197,8 +962,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 310,
-        "y": 180,
+        "x": 410,
+        "y": 220,
         "wires": []
     }
 ]
