@@ -917,7 +917,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 650,
+        "x": 730,
         "y": 80,
         "wires": []
     },
@@ -932,7 +932,28 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 430,
+        "x": 370,
+        "y": 80,
+        "wires": [
+            [
+                "3af8f1145c7750e7"
+            ]
+        ]
+    },
+    {
+        "id": "3af8f1145c7750e7",
+        "type": "mqtt in",
+        "z": "8706d1775ed872de",
+        "name": "mqtt state change",
+        "topic": "",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "9b5dc2b3a2f9fa7c",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 1,
+        "x": 550,
         "y": 80,
         "wires": [
             [
