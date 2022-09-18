@@ -26,19 +26,11 @@
         ],
         "out": [
             {
-                "x": 1160,
+                "x": 1460,
                 "y": 260,
                 "wires": [
                     {
-                        "id": "483b8386ad117523",
-                        "port": 0
-                    },
-                    {
-                        "id": "1164ac6e767479e7",
-                        "port": 0
-                    },
-                    {
-                        "id": "42b038955dd5407b",
+                        "id": "ced926561b507e7b",
                         "port": 0
                     }
                 ]
@@ -300,7 +292,9 @@
         "x": 670,
         "y": 80,
         "wires": [
-            []
+            [
+                "ced926561b507e7b"
+            ]
         ]
     },
     {
@@ -317,7 +311,9 @@
         "x": 670,
         "y": 160,
         "wires": [
-            []
+            [
+                "ced926561b507e7b"
+            ]
         ]
     },
     {
@@ -391,7 +387,9 @@
         "x": 970,
         "y": 300,
         "wires": [
-            []
+            [
+                "ced926561b507e7b"
+            ]
         ]
     },
     {
@@ -411,6 +409,23 @@
             [
                 "e18f83b87837db46"
             ]
+        ]
+    },
+    {
+        "id": "ced926561b507e7b",
+        "type": "function",
+        "z": "5734cb6af7d23702",
+        "name": "payload",
+        "func": "return { payload: msg.payload };",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1240,
+        "y": 260,
+        "wires": [
+            []
         ]
     },
     {
@@ -561,8 +576,7 @@
         "y": 80,
         "wires": [
             [
-                "2abcd4a9bbac8baf",
-                "9ef150b533d88d13"
+                "2abcd4a9bbac8baf"
             ]
         ]
     },
@@ -636,25 +650,8 @@
         "correl": "",
         "expiry": "",
         "broker": "9b5dc2b3a2f9fa7c",
-        "x": 1370,
+        "x": 1390,
         "y": 140,
-        "wires": []
-    },
-    {
-        "id": "62bb0e4d3f3731e3",
-        "type": "debug",
-        "z": "e9de432dbfd2a285",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1310,
-        "y": 220,
         "wires": []
     },
     {
@@ -663,50 +660,33 @@
         "z": "e9de432dbfd2a285",
         "name": "mqtt-topic",
         "topic": "0_userdata.0.mqtt-devices.Tastaturbeleuchtung.topic",
-        "attrname": "topic",
+        "attrname": "mqttTopic",
         "payloadType": "value",
         "errOnInvalidState": "true",
-        "x": 1080,
+        "x": 1060,
         "y": 80,
         "wires": [
             [
-                "eebe17bf033c40b9"
+                "fadf868a9c969062"
             ]
         ]
     },
     {
-        "id": "d5b43606ce71daf5",
-        "type": "ioBroker get",
-        "z": "e9de432dbfd2a285",
-        "name": "mqtt-topic",
-        "topic": "0_userdata.0.mqtt-devices.Tastaturbeleuchtung.topic",
-        "attrname": "payload",
-        "payloadType": "value",
-        "errOnInvalidState": "true",
-        "x": 1160,
-        "y": 340,
-        "wires": [
-            [
-                "62bb0e4d3f3731e3"
-            ]
-        ]
-    },
-    {
-        "id": "9ef150b533d88d13",
+        "id": "fadf868a9c969062",
         "type": "function",
         "z": "e9de432dbfd2a285",
-        "name": "",
-        "func": "\nreturn {};",
+        "name": "parse",
+        "func": "const {payload, mqttTopic: topic } = msg;\nreturn { ...payload, ...topic };",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1040,
-        "y": 280,
+        "x": 1230,
+        "y": 80,
         "wires": [
             [
-                "d5b43606ce71daf5"
+                "eebe17bf033c40b9"
             ]
         ]
     }
