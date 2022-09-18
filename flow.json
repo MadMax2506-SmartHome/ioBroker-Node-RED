@@ -8,6 +8,14 @@
         "env": []
     },
     {
+        "id": "43be9f181fabd3e8",
+        "type": "tab",
+        "label": "mqtt",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "5734cb6af7d23702",
         "type": "subflow",
         "name": "mqtt light controller",
@@ -113,6 +121,78 @@
             "hs-color"
         ],
         "icon": "node-red/swap.svg"
+    },
+    {
+        "id": "029142ac14ba233b",
+        "type": "subflow",
+        "name": "keyboard light controller",
+        "info": "",
+        "category": "mqtt-devices",
+        "in": [
+            {
+                "x": 40,
+                "y": 40,
+                "wires": [
+                    {
+                        "id": "44c08d1113fd255c"
+                    }
+                ]
+            }
+        ],
+        "out": [],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99",
+        "icon": "node-red/bridge.svg"
+    },
+    {
+        "id": "bb9b6a98f8635a55",
+        "type": "subflow",
+        "name": "bed wall light controller",
+        "info": "",
+        "category": "mqtt-devices",
+        "in": [
+            {
+                "x": 40,
+                "y": 40,
+                "wires": [
+                    {
+                        "id": "4e8da7ce0ace9b8d"
+                    }
+                ]
+            }
+        ],
+        "out": [],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99",
+        "inputLabels": [
+            "data"
+        ],
+        "icon": "node-red/bridge.svg"
+    },
+    {
+        "id": "0d47d69ad720d4a1",
+        "type": "subflow",
+        "name": "bed side light controller",
+        "info": "",
+        "category": "mqtt-devices",
+        "in": [
+            {
+                "x": 40,
+                "y": 40,
+                "wires": [
+                    {
+                        "id": "83578f4e952f4b59"
+                    }
+                ]
+            }
+        ],
+        "out": [],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99",
+        "icon": "node-red/bridge.svg"
     },
     {
         "id": "140dcbb93b137d2d",
@@ -521,6 +601,168 @@
         ]
     },
     {
+        "id": "8184ca14a3dd2487",
+        "type": "function",
+        "z": "029142ac14ba233b",
+        "name": "parse",
+        "func": "const {mqttTopic: topic, payload } = msg;\nreturn { payload: payload, topic: topic };",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 40,
+        "wires": [
+            [
+                "cee285c71550ebde"
+            ]
+        ]
+    },
+    {
+        "id": "44c08d1113fd255c",
+        "type": "ioBroker get",
+        "z": "029142ac14ba233b",
+        "name": "mqtt-topic",
+        "topic": "0_userdata.0.mqtt-devices.Tastaturbeleuchtung.topic",
+        "attrname": "mqttTopic",
+        "payloadType": "value",
+        "errOnInvalidState": "true",
+        "x": 180,
+        "y": 40,
+        "wires": [
+            [
+                "8184ca14a3dd2487"
+            ]
+        ]
+    },
+    {
+        "id": "cee285c71550ebde",
+        "type": "mqtt out",
+        "z": "029142ac14ba233b",
+        "name": "",
+        "topic": "",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "9b5dc2b3a2f9fa7c",
+        "x": 510,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "30c97ad8a7d93989",
+        "type": "function",
+        "z": "bb9b6a98f8635a55",
+        "name": "parse",
+        "func": "const {mqttTopic: topic, payload } = msg;\nreturn { payload: payload, topic: topic };",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 40,
+        "wires": [
+            [
+                "b19931a47cf41a0e"
+            ]
+        ]
+    },
+    {
+        "id": "4e8da7ce0ace9b8d",
+        "type": "ioBroker get",
+        "z": "bb9b6a98f8635a55",
+        "name": "mqtt-topic",
+        "topic": "0_userdata.0.mqtt-devices.Wandbeleuchtung.topic",
+        "attrname": "mqttTopic",
+        "payloadType": "value",
+        "errOnInvalidState": "true",
+        "x": 180,
+        "y": 40,
+        "wires": [
+            [
+                "30c97ad8a7d93989"
+            ]
+        ]
+    },
+    {
+        "id": "b19931a47cf41a0e",
+        "type": "mqtt out",
+        "z": "bb9b6a98f8635a55",
+        "name": "",
+        "topic": "",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "9b5dc2b3a2f9fa7c",
+        "x": 510,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "730bf345abbeee4c",
+        "type": "function",
+        "z": "0d47d69ad720d4a1",
+        "name": "parse",
+        "func": "const {mqttTopic: topic, payload } = msg;\nreturn { payload: payload, topic: topic };",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 40,
+        "wires": [
+            [
+                "c9943ea40a389d0a"
+            ]
+        ]
+    },
+    {
+        "id": "83578f4e952f4b59",
+        "type": "ioBroker get",
+        "z": "0d47d69ad720d4a1",
+        "name": "mqtt-topic",
+        "topic": "0_userdata.0.mqtt-devices.seitliche_Bettbeleuchtung.topic",
+        "attrname": "mqttTopic",
+        "payloadType": "value",
+        "errOnInvalidState": "true",
+        "x": 180,
+        "y": 40,
+        "wires": [
+            [
+                "730bf345abbeee4c"
+            ]
+        ]
+    },
+    {
+        "id": "c9943ea40a389d0a",
+        "type": "mqtt out",
+        "z": "0d47d69ad720d4a1",
+        "name": "",
+        "topic": "",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "9b5dc2b3a2f9fa7c",
+        "x": 510,
+        "y": 40,
+        "wires": []
+    },
+    {
         "id": "0e87eb94338d50e5",
         "type": "amazon-echo-hub",
         "z": "e9de432dbfd2a285",
@@ -544,7 +786,7 @@
         "y": 140,
         "wires": [
             [
-                "aef1990c37f6bb58"
+                "b32fbf2207031e1d"
             ]
         ]
     },
@@ -578,7 +820,7 @@
         "y": 80,
         "wires": [
             [
-                "2abcd4a9bbac8baf"
+                "40a55736717d3afa"
             ]
         ]
     },
@@ -590,9 +832,7 @@
         "x": 870,
         "y": 200,
         "wires": [
-            [
-                "78b6b1b5dad5965a"
-            ]
+            []
         ]
     },
     {
@@ -641,91 +881,40 @@
         "icon": "node-red/light.svg"
     },
     {
-        "id": "eebe17bf033c40b9",
-        "type": "mqtt out",
+        "id": "40a55736717d3afa",
+        "type": "subflow:029142ac14ba233b",
         "z": "e9de432dbfd2a285",
         "name": "",
-        "topic": "",
-        "qos": "0",
-        "retain": "false",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "9b5dc2b3a2f9fa7c",
-        "x": 1410,
+        "x": 1100,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "b32fbf2207031e1d",
+        "type": "subflow:bb9b6a98f8635a55",
+        "z": "e9de432dbfd2a285",
+        "name": "",
+        "x": 1080,
         "y": 140,
         "wires": []
     },
     {
-        "id": "2abcd4a9bbac8baf",
-        "type": "ioBroker get",
-        "z": "e9de432dbfd2a285",
-        "name": "mqtt-topic",
-        "topic": "0_userdata.0.mqtt-devices.Tastaturbeleuchtung.topic",
-        "attrname": "mqttTopic",
-        "payloadType": "value",
-        "errOnInvalidState": "true",
-        "x": 1060,
-        "y": 80,
-        "wires": [
-            [
-                "cf21e14fb70acbbd"
-            ]
-        ]
-    },
-    {
-        "id": "aef1990c37f6bb58",
-        "type": "ioBroker get",
-        "z": "e9de432dbfd2a285",
-        "name": "mqtt-topic",
-        "topic": "0_userdata.0.mqtt-devices.Wandbeleuchtung.topic",
-        "attrname": "mqttTopic",
-        "payloadType": "value",
-        "errOnInvalidState": "true",
-        "x": 1040,
-        "y": 140,
-        "wires": [
-            [
-                "cf21e14fb70acbbd"
-            ]
-        ]
-    },
-    {
-        "id": "cf21e14fb70acbbd",
-        "type": "function",
-        "z": "e9de432dbfd2a285",
-        "name": "parse",
-        "func": "const {payload, mqttTopic: topic } = msg;\nreturn { payload: payload, topic: topic };",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1250,
-        "y": 140,
-        "wires": [
-            [
-                "eebe17bf033c40b9"
-            ]
-        ]
-    },
-    {
-        "id": "78b6b1b5dad5965a",
-        "type": "ioBroker get",
-        "z": "e9de432dbfd2a285",
-        "name": "mqtt-topic",
-        "topic": "0_userdata.0.mqtt-devices.seitliche_Bettbeleuchtung.topic",
-        "attrname": "mqttTopic",
-        "payloadType": "value",
-        "errOnInvalidState": "true",
-        "x": 1080,
+        "id": "8705d3cc911bde30",
+        "type": "mqtt in",
+        "z": "43be9f181fabd3e8",
+        "name": "",
+        "topic": "",
+        "qos": "0",
+        "datatype": "utf8",
+        "broker": "9b5dc2b3a2f9fa7c",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 1,
+        "x": 470,
         "y": 200,
         "wires": [
-            [
-                "cf21e14fb70acbbd"
-            ]
+            []
         ]
     }
 ]
