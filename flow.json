@@ -663,13 +663,29 @@
         "name": "mqtt-topic",
         "topic": "0_userdata.0.mqtt-devices.Tastaturbeleuchtung.topic",
         "attrname": "topic",
-        "payloadType": "object",
+        "payloadType": "value",
         "errOnInvalidState": "true",
         "x": 1080,
         "y": 80,
         "wires": [
             [
-                "eebe17bf033c40b9",
+                "eebe17bf033c40b9"
+            ]
+        ]
+    },
+    {
+        "id": "d5b43606ce71daf5",
+        "type": "ioBroker get",
+        "z": "e9de432dbfd2a285",
+        "name": "mqtt-topic",
+        "topic": "0_userdata.0.mqtt-devices.Tastaturbeleuchtung.topic",
+        "attrname": "topic",
+        "payloadType": "value",
+        "errOnInvalidState": "true",
+        "x": 1060,
+        "y": 320,
+        "wires": [
+            [
                 "62bb0e4d3f3731e3"
             ]
         ]
