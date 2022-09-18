@@ -144,17 +144,14 @@
                 "y": 160,
                 "wires": [
                     {
-                        "id": "3bf75f038d579906"
-                    },
-                    {
-                        "id": "a9d504ff17a8e083"
+                        "id": "956a3865705a9cc8"
                     }
                 ]
             }
         ],
         "out": [
             {
-                "x": 770,
+                "x": 1290,
                 "y": 40,
                 "wires": [
                     {
@@ -164,7 +161,7 @@
                 ]
             },
             {
-                "x": 800,
+                "x": 1320,
                 "y": 100,
                 "wires": [
                     {
@@ -174,7 +171,7 @@
                 ]
             },
             {
-                "x": 800,
+                "x": 1320,
                 "y": 160,
                 "wires": [
                     {
@@ -184,7 +181,7 @@
                 ]
             },
             {
-                "x": 770,
+                "x": 1290,
                 "y": 220,
                 "wires": [
                     {
@@ -194,7 +191,7 @@
                 ]
             },
             {
-                "x": 790,
+                "x": 1310,
                 "y": 280,
                 "wires": [
                     {
@@ -871,7 +868,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 210,
+        "x": 790,
         "y": 160,
         "wires": [
             [
@@ -890,7 +887,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 450,
+        "x": 970,
         "y": 160,
         "wires": [
             [],
@@ -920,9 +917,66 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 270,
+        "x": 790,
         "y": 260,
         "wires": []
+    },
+    {
+        "id": "956a3865705a9cc8",
+        "type": "function",
+        "z": "6e07c8ed867b3ea9",
+        "name": "map object topic",
+        "func": "const {objectKey} = msg;\n\nreturn {\n  objectKey: objectKey,\n  topic: `${objectKey}.id`\n};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 200,
+        "y": 160,
+        "wires": [
+            [
+                "15b45e9203ad0a76"
+            ]
+        ]
+    },
+    {
+        "id": "15b45e9203ad0a76",
+        "type": "ioBroker get",
+        "z": "6e07c8ed867b3ea9",
+        "name": "read mqtt topic",
+        "topic": "",
+        "attrname": "payload",
+        "payloadType": "value",
+        "errOnInvalidState": "nothing",
+        "x": 400,
+        "y": 160,
+        "wires": [
+            [
+                "a9d504ff17a8e083",
+                "729e7d3af0248b46"
+            ]
+        ]
+    },
+    {
+        "id": "729e7d3af0248b46",
+        "type": "function",
+        "z": "6e07c8ed867b3ea9",
+        "name": "map object topic",
+        "func": "const {objectKey, payload} = msg;\n\nreturn {\n  objectKey: objectKey,\n  topic: payload\n};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 160,
+        "wires": [
+            [
+                "3bf75f038d579906",
+                "a9d504ff17a8e083"
+            ]
+        ]
     },
     {
         "id": "0e87eb94338d50e5",
@@ -1121,7 +1175,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 790,
+        "x": 570,
         "y": 440,
         "wires": []
     },
@@ -1146,7 +1200,7 @@
         "y": 400,
         "wires": [
             [
-                "4699119f33ec0aad"
+                "7a8c5944f4c20677"
             ]
         ]
     },
@@ -1165,7 +1219,7 @@
         "stateUnit": "",
         "stateMin": "",
         "stateMax": "",
-        "x": 810,
+        "x": 590,
         "y": 360,
         "wires": []
     },
@@ -1174,7 +1228,7 @@
         "type": "subflow:6e07c8ed867b3ea9",
         "z": "8706d1775ed872de",
         "name": "",
-        "x": 500,
+        "x": 280,
         "y": 400,
         "wires": [
             [
@@ -1191,25 +1245,6 @@
             ],
             [
                 "3d458690b0b72313"
-            ]
-        ]
-    },
-    {
-        "id": "4699119f33ec0aad",
-        "type": "function",
-        "z": "8706d1775ed872de",
-        "name": "map",
-        "func": "const { objectKey } = msg;\n\nreturn {\n    objectKey: objectKey,\n    topic: get(`${objectKey}.id`)\n}",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 270,
-        "y": 400,
-        "wires": [
-            [
-                "7a8c5944f4c20677"
             ]
         ]
     }
