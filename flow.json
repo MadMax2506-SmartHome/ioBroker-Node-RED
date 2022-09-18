@@ -862,7 +862,7 @@
         "type": "function",
         "z": "6e07c8ed867b3ea9",
         "name": "prepare data",
-        "func": "const { ioBrokerKey, payload } = msg;\nconst {\n    status,\n    color,\n    orientation,\n    animationTyp,\n    animationTime\n} = payload;\n\nreturn [\n    { topic: `${ioBrokerKey}.active`, payload: status === \"active\" },\n    { topic: `${ioBrokerKey}.animation_time`, payload: animationTime },\n    { topic: `${ioBrokerKey}.animation_typ`, payload: animationTyp },\n    { topic: `${ioBrokerKey}.color`, payload: JSON.stringify(color) },\n    { topic: `${ioBrokerKey}.orientation`, payload: orientation }\n];",
+        "func": "const { ioBrokerKey } = flow;\nconst { payload } = msg;\nconst {\n    status,\n    color,\n    orientation,\n    animationTyp,\n    animationTime\n} = payload;\n\nreturn [\n    { topic: `${ioBrokerKey}.active`, payload: status === \"active\" },\n    { topic: `${ioBrokerKey}.animation_time`, payload: animationTime },\n    { topic: `${ioBrokerKey}.animation_typ`, payload: animationTyp },\n    { topic: `${ioBrokerKey}.color`, payload: JSON.stringify(color) },\n    { topic: `${ioBrokerKey}.orientation`, payload: orientation }\n];",
         "outputs": 5,
         "noerr": 0,
         "initialize": "",
@@ -943,7 +943,7 @@
         "type": "function",
         "z": "6e07c8ed867b3ea9",
         "name": "prepare mqtt",
-        "func": "const {objectKey, payload} = msg;\n\nreturn {\n  objectKey: objectKey,\n  topic: `status/${payload}`,\n  action: \"subscribe\",\n  qos: 0\n};",
+        "func": "const {objectKey, payload} = msg;\nflow[\"objectKey\"] = objectKey;\n\nreturn {\n  topic: `status/${payload}`,\n  action: \"subscribe\",\n  qos: 0\n};",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -971,7 +971,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 1,
-        "x": 780,
+        "x": 760,
         "y": 160,
         "wires": [
             [
