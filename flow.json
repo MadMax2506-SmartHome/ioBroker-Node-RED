@@ -676,7 +676,7 @@
         "type": "function",
         "z": "e9de432dbfd2a285",
         "name": "parse",
-        "func": "const {payload, mqttTopic: topic } = msg;\nreturn { ...payload, ...topic };",
+        "func": "const {payload, mqttTopic: topic } = msg;\nreturn { payload: payload, topic: topic };",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
