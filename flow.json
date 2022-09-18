@@ -959,14 +959,14 @@
         "id": "729e7d3af0248b46",
         "type": "function",
         "z": "6e07c8ed867b3ea9",
-        "name": "map mqtt topic",
-        "func": "const {objectKey, payload} = msg;\n\nreturn {\n  objectKey: objectKey,\n  topic: `status/${payload}`\n};",
+        "name": "prepare mqtt",
+        "func": "const {objectKey, payload} = msg;\n\nreturn {\n  objectKey: objectKey,\n  topic: `status/${payload}`,\n  qos: 0\n};",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 600,
+        "x": 590,
         "y": 160,
         "wires": [
             [
