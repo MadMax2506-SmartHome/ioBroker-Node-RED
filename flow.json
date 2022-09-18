@@ -1450,7 +1450,7 @@
             },
             {
                 "p": "deskLightingBedSide",
-                "v": "",
+                "v": "0_userdata.0.mqtt-devices.seitliche_Bettbeleuchtung",
                 "vt": "str"
             }
         ],
