@@ -1199,7 +1199,7 @@
         "type": "function",
         "z": "8706d1775ed872de",
         "name": "map",
-        "func": "const { objectKey } = msg;\n\nconst topic = \"todo\";\n\nreturn {\n    objectKey: objectKey,\n    topic: topic\n}",
+        "func": "const { objectKey } = msg;\n\nreturn {\n    objectKey: objectKey,\n    topic: get(`${objectKey}.id`)\n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
