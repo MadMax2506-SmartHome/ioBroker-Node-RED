@@ -242,7 +242,7 @@
         "name": "",
         "broker": "localhost",
         "port": "1883",
-        "clientid": "node-red-ioBroker",
+        "clientid": "ioBroker node-red",
         "autoConnect": true,
         "usetls": false,
         "protocolVersion": "4",
@@ -900,7 +900,8 @@
         "y": 80,
         "wires": [
             [
-                "2cdacd6736fb3c3d"
+                "2cdacd6736fb3c3d",
+                "a6751e45e2a88696"
             ]
         ]
     },
@@ -961,5 +962,44 @@
                 "1e495f12dcdee7aa"
             ]
         ]
+    },
+    {
+        "id": "a6751e45e2a88696",
+        "type": "function",
+        "z": "8706d1775ed872de",
+        "name": "",
+        "func": "return [1,2,3,4]",
+        "outputs": 4,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 400,
+        "wires": [
+            [],
+            [
+                "3d458690b0b72313"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "3d458690b0b72313",
+        "type": "debug",
+        "z": "8706d1775ed872de",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 730,
+        "y": 400,
+        "wires": []
     }
 ]
