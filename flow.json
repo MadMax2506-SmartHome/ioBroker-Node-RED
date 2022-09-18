@@ -1074,7 +1074,7 @@
         "y": 220,
         "wires": [
             [
-                "631130b7719c11ec"
+                "c7f424ad731065ab"
             ]
         ]
     },
@@ -1091,8 +1091,27 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 290,
+        "x": 450,
         "y": 220,
         "wires": []
+    },
+    {
+        "id": "c7f424ad731065ab",
+        "type": "function",
+        "z": "43be9f181fabd3e8",
+        "name": "parse",
+        "func": "const { payload } = msg;\nreturn { ...payload }",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 220,
+        "wires": [
+            [
+                "631130b7719c11ec"
+            ]
+        ]
     }
 ]
