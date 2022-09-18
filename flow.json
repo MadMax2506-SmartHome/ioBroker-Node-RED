@@ -133,6 +133,90 @@
         "icon": "node-red/light.svg"
     },
     {
+        "id": "6e07c8ed867b3ea9",
+        "type": "subflow",
+        "name": "mqtt light receiver",
+        "info": "",
+        "category": "mqtt-devices",
+        "in": [
+            {
+                "x": 60,
+                "y": 160,
+                "wires": [
+                    {
+                        "id": "3bf75f038d579906"
+                    },
+                    {
+                        "id": "a9d504ff17a8e083"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 770,
+                "y": 40,
+                "wires": [
+                    {
+                        "id": "93586914e27d9823",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 800,
+                "y": 100,
+                "wires": [
+                    {
+                        "id": "93586914e27d9823",
+                        "port": 1
+                    }
+                ]
+            },
+            {
+                "x": 800,
+                "y": 160,
+                "wires": [
+                    {
+                        "id": "93586914e27d9823",
+                        "port": 2
+                    }
+                ]
+            },
+            {
+                "x": 770,
+                "y": 220,
+                "wires": [
+                    {
+                        "id": "93586914e27d9823",
+                        "port": 3
+                    }
+                ]
+            },
+            {
+                "x": 790,
+                "y": 280,
+                "wires": [
+                    {
+                        "id": "93586914e27d9823",
+                        "port": 4
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#F3B567",
+        "outputLabels": [
+            "active",
+            "animation_time",
+            "animation_type",
+            "color",
+            "orientation"
+        ],
+        "icon": "node-red-contrib-polymer/ui_slider.png"
+    },
+    {
         "id": "140dcbb93b137d2d",
         "type": "ui_tab",
         "name": "Home",
@@ -777,6 +861,70 @@
         ]
     },
     {
+        "id": "3bf75f038d579906",
+        "type": "function",
+        "z": "6e07c8ed867b3ea9",
+        "name": "mock",
+        "func": "return {\n    payload: {\n      status: \"active\",\n      color: {\n        red: 55,\n        green: 20,\n        blue: 12\n      },\n      orientation: 'l',\n      animationTyp: \"fade\",\n      animationTime: 400\n    }\n};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 210,
+        "y": 160,
+        "wires": [
+            [
+                "93586914e27d9823"
+            ]
+        ]
+    },
+    {
+        "id": "93586914e27d9823",
+        "type": "function",
+        "z": "6e07c8ed867b3ea9",
+        "name": "prepare data",
+        "func": "const { ioBrokerKey, payload } = msg;\nconst {\n    status,\n    color,\n    orientation,\n    animationTyp,\n    animationTime\n} = payload;\n\nreturn [\n    { topic: `${ioBrokerKey}.active`, payload: status === \"active\" },\n    { topic: `${ioBrokerKey}.animation_time`, payload: animationTime },\n    { topic: `${ioBrokerKey}.animation_typ`, payload: animationTyp },\n    { topic: `${ioBrokerKey}.color`, payload: JSON.stringify(color) },\n    { topic: `${ioBrokerKey}.orientation`, payload: orientation }\n];",
+        "outputs": 5,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 160,
+        "wires": [
+            [],
+            [],
+            [],
+            [],
+            []
+        ],
+        "outputLabels": [
+            "active",
+            "animation_time",
+            "animation_typ",
+            "color",
+            "orientation"
+        ]
+    },
+    {
+        "id": "a9d504ff17a8e083",
+        "type": "debug",
+        "z": "6e07c8ed867b3ea9",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 270,
+        "y": 260,
+        "wires": []
+    },
+    {
         "id": "0e87eb94338d50e5",
         "type": "amazon-echo-hub",
         "z": "e9de432dbfd2a285",
@@ -961,49 +1109,6 @@
         ]
     },
     {
-        "id": "a6751e45e2a88696",
-        "type": "function",
-        "z": "8706d1775ed872de",
-        "name": "prepare data",
-        "func": "const { key, payload } = msg;\nconst {\n    status,\n    color,\n    orientation,\n    animationTyp,\n    animationTime\n} = payload;\n\nreturn [\n    { topic: `${key}.active`, payload: status === \"active\" },\n    { topic: `${key}.animation_time`, payload: animationTime },\n    { topic: `${key}.animation_typ`, payload: animationTyp },\n    { topic: `${key}.color`, payload: JSON.stringify(color) },\n    { topic: `${key}.orientation`, payload: orientation }\n];",
-        "outputs": 5,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 550,
-        "y": 400,
-        "wires": [
-            [
-                "3d458690b0b72313",
-                "34f6a7ebcd73c961"
-            ],
-            [
-                "3d458690b0b72313",
-                "34f6a7ebcd73c961"
-            ],
-            [
-                "3d458690b0b72313",
-                "34f6a7ebcd73c961"
-            ],
-            [
-                "3d458690b0b72313",
-                "34f6a7ebcd73c961"
-            ],
-            [
-                "3d458690b0b72313",
-                "34f6a7ebcd73c961"
-            ]
-        ],
-        "outputLabels": [
-            "active",
-            "animation_time",
-            "animation_typ",
-            "color",
-            "orientation"
-        ]
-    },
-    {
         "id": "3d458690b0b72313",
         "type": "debug",
         "z": "8706d1775ed872de",
@@ -1027,7 +1132,7 @@
         "name": "",
         "props": [
             {
-                "p": "key",
+                "p": "objectKey",
                 "v": "0_userdata.0.mqtt-devices.Tastaturbeleuchtung",
                 "vt": "str"
             }
@@ -1041,26 +1146,7 @@
         "y": 400,
         "wires": [
             [
-                "2cefe047e6be6b8e"
-            ]
-        ]
-    },
-    {
-        "id": "2cefe047e6be6b8e",
-        "type": "function",
-        "z": "8706d1775ed872de",
-        "name": "",
-        "func": "\nreturn {\n    key: msg.key,\n    payload: {\n      status: \"active\",\n      color: {\n        red: 55,\n        green: 20,\n        blue: 12\n      },\n      orientation: 'l',\n      animationTyp: \"fade\",\n      animationTime: 400\n    }\n};",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 320,
-        "y": 400,
-        "wires": [
-            [
-                "a6751e45e2a88696"
+                "4699119f33ec0aad"
             ]
         ]
     },
@@ -1082,5 +1168,49 @@
         "x": 810,
         "y": 360,
         "wires": []
+    },
+    {
+        "id": "7a8c5944f4c20677",
+        "type": "subflow:6e07c8ed867b3ea9",
+        "z": "8706d1775ed872de",
+        "name": "",
+        "x": 500,
+        "y": 400,
+        "wires": [
+            [
+                "3d458690b0b72313"
+            ],
+            [
+                "3d458690b0b72313"
+            ],
+            [
+                "3d458690b0b72313"
+            ],
+            [
+                "3d458690b0b72313"
+            ],
+            [
+                "3d458690b0b72313"
+            ]
+        ]
+    },
+    {
+        "id": "4699119f33ec0aad",
+        "type": "function",
+        "z": "8706d1775ed872de",
+        "name": "map",
+        "func": "const { objectKey } = msg;\n\nconst topic = \"todo\";\n\nreturn {\n    objectKey: objectKey,\n    topic: topic\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 400,
+        "wires": [
+            [
+                "7a8c5944f4c20677"
+            ]
+        ]
     }
 ]
