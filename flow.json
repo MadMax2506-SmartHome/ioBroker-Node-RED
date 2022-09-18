@@ -885,13 +885,19 @@
         "type": "inject",
         "z": "3f60c6b39ab30602",
         "name": "empty object",
-        "props": [],
+        "props": [
+            {
+                "p": "t",
+                "v": "a",
+                "vt": "str"
+            }
+        ],
         "repeat": "",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 90,
+        "x": 110,
         "y": 60,
         "wires": [
             [
