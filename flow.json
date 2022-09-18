@@ -227,6 +227,33 @@
         }
     },
     {
+        "id": "9b5dc2b3a2f9fa7c",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "node-red-ioBroker",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
         "id": "dbdce3880380f4e3",
         "type": "switch",
         "z": "5734cb6af7d23702",
@@ -494,25 +521,6 @@
         ]
     },
     {
-        "id": "029b6f6a6aa28bf8",
-        "type": "ioBroker out",
-        "z": "e9de432dbfd2a285",
-        "name": "MQTT - Wandbeleuchtung",
-        "topic": "0_userdata.0.mqtt-devices.Wandbeleuchtung.topic",
-        "ack": "false",
-        "autoCreate": "false",
-        "stateName": "",
-        "role": "",
-        "payloadType": "",
-        "readonly": "",
-        "stateUnit": "",
-        "stateMin": "",
-        "stateMax": "",
-        "x": 1100,
-        "y": 140,
-        "wires": []
-    },
-    {
         "id": "499649036dafacbd",
         "type": "subflow:5734cb6af7d23702",
         "z": "e9de432dbfd2a285",
@@ -545,25 +553,6 @@
         ]
     },
     {
-        "id": "200b47dbe90241b9",
-        "type": "ioBroker out",
-        "z": "e9de432dbfd2a285",
-        "name": "MQTT - Tastaturbeleuchtung",
-        "topic": "0_userdata.0.mqtt-devices.Tastaturbeleuchtung.topic",
-        "ack": "false",
-        "autoCreate": "false",
-        "stateName": "",
-        "role": "",
-        "payloadType": "",
-        "readonly": "",
-        "stateUnit": "",
-        "stateMin": "",
-        "stateMax": "",
-        "x": 1120,
-        "y": 80,
-        "wires": []
-    },
-    {
         "id": "234247e0e579b73e",
         "type": "subflow:5734cb6af7d23702",
         "z": "e9de432dbfd2a285",
@@ -571,27 +560,10 @@
         "x": 850,
         "y": 80,
         "wires": [
-            []
+            [
+                "4c4201125c9b01c9"
+            ]
         ]
-    },
-    {
-        "id": "f287cf33cfc228fd",
-        "type": "ioBroker out",
-        "z": "e9de432dbfd2a285",
-        "name": "MQTT - seitliche Bettbeleuchtung",
-        "topic": "0_userdata.0.mqtt-devices.seitliche_Bettbeleuchtung.topic",
-        "ack": "false",
-        "autoCreate": "false",
-        "stateName": "",
-        "role": "",
-        "payloadType": "",
-        "readonly": "",
-        "stateUnit": "",
-        "stateMin": "",
-        "stateMax": "",
-        "x": 1160,
-        "y": 200,
-        "wires": []
     },
     {
         "id": "2535eb970df25d53",
@@ -648,5 +620,56 @@
             ]
         ],
         "icon": "node-red/light.svg"
+    },
+    {
+        "id": "4c4201125c9b01c9",
+        "type": "ioBroker get object",
+        "z": "e9de432dbfd2a285",
+        "name": "mqtt-topic",
+        "topic": "0_userdata.0.mqtt-devices.Tastaturbeleuchtung.topic",
+        "attrname": "topic",
+        "x": 1060,
+        "y": 80,
+        "wires": [
+            [
+                "eebe17bf033c40b9",
+                "62bb0e4d3f3731e3"
+            ]
+        ]
+    },
+    {
+        "id": "eebe17bf033c40b9",
+        "type": "mqtt out",
+        "z": "e9de432dbfd2a285",
+        "name": "",
+        "topic": "",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "9b5dc2b3a2f9fa7c",
+        "x": 1370,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "62bb0e4d3f3731e3",
+        "type": "debug",
+        "z": "e9de432dbfd2a285",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1310,
+        "y": 220,
+        "wires": []
     }
 ]
