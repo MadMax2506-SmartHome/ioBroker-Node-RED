@@ -295,24 +295,6 @@
         "icon": "node-red/light.svg"
     },
     {
-        "id": "7a87c0184e6c4f62",
-        "type": "subflow",
-        "name": "Subflow 1",
-        "info": "",
-        "in": [
-            {
-                "x": 40,
-                "y": 40,
-                "wires": [
-                    {
-                        "id": "b64c41f3f4d620ad"
-                    }
-                ]
-            }
-        ],
-        "out": []
-    },
-    {
         "id": "140dcbb93b137d2d",
         "type": "ui_tab",
         "name": "Home",
@@ -1094,58 +1076,6 @@
         ]
     },
     {
-        "id": "0ed311b9ff7be75f",
-        "type": "ioBroker get",
-        "z": "7a87c0184e6c4f62",
-        "name": "",
-        "topic": "",
-        "attrname": "payload",
-        "payloadType": "value",
-        "errOnInvalidState": "nothing",
-        "x": 360,
-        "y": 40,
-        "wires": [
-            [
-                "876140b368d28c38"
-            ]
-        ]
-    },
-    {
-        "id": "b64c41f3f4d620ad",
-        "type": "function",
-        "z": "7a87c0184e6c4f62",
-        "name": "parse topic",
-        "func": "const { objectKey } = msg;\n\nreturn {\n    topic: `${objectKey}.toPublish`\n}",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 170,
-        "y": 40,
-        "wires": [
-            [
-                "0ed311b9ff7be75f"
-            ]
-        ]
-    },
-    {
-        "id": "876140b368d28c38",
-        "type": "debug",
-        "z": "7a87c0184e6c4f62",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 570,
-        "y": 40,
-        "wires": []
-    },
-    {
         "id": "0e87eb94338d50e5",
         "type": "amazon-echo-hub",
         "z": "e9de432dbfd2a285",
@@ -1480,11 +1410,10 @@
         "onceDelay": "0.5",
         "topic": "",
         "x": 140,
-        "y": 160,
+        "y": 120,
         "wires": [
             [
-                "7a8c5944f4c20677",
-                "79272606ee5c2d8e"
+                "7a8c5944f4c20677"
             ]
         ]
     },
@@ -1539,12 +1468,40 @@
         ]
     },
     {
-        "id": "79272606ee5c2d8e",
-        "type": "subflow:7a87c0184e6c4f62",
+        "id": "79afa44c1e737be5",
+        "type": "ioBroker in",
+        "z": "8706d1775ed872de",
+        "name": "toPublish",
+        "topic": "0_userdata.0.mqtt-devices.Tastaturbeleuchtung.toPublish",
+        "payloadType": "value",
+        "onlyack": "update",
+        "func": "all",
+        "gap": "",
+        "fireOnStart": "false",
+        "outFormat": "MQTT",
+        "x": 100,
+        "y": 220,
+        "wires": [
+            [
+                "0bc1c84c99145d6b"
+            ]
+        ]
+    },
+    {
+        "id": "0bc1c84c99145d6b",
+        "type": "debug",
         "z": "8706d1775ed872de",
         "name": "",
-        "x": 340,
-        "y": 200,
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 270,
+        "y": 220,
         "wires": []
     }
 ]
