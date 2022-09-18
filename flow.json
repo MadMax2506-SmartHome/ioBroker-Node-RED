@@ -561,7 +561,7 @@
         "y": 80,
         "wires": [
             [
-                "4c4201125c9b01c9"
+                "2abcd4a9bbac8baf"
             ]
         ]
     },
@@ -622,22 +622,6 @@
         "icon": "node-red/light.svg"
     },
     {
-        "id": "4c4201125c9b01c9",
-        "type": "ioBroker get object",
-        "z": "e9de432dbfd2a285",
-        "name": "mqtt-topic",
-        "topic": "0_userdata.0.mqtt-devices.Tastaturbeleuchtung.topic",
-        "attrname": "topic",
-        "x": 1060,
-        "y": 80,
-        "wires": [
-            [
-                "eebe17bf033c40b9",
-                "62bb0e4d3f3731e3"
-            ]
-        ]
-    },
-    {
         "id": "eebe17bf033c40b9",
         "type": "mqtt out",
         "z": "e9de432dbfd2a285",
@@ -671,5 +655,22 @@
         "x": 1310,
         "y": 220,
         "wires": []
+    },
+    {
+        "id": "2abcd4a9bbac8baf",
+        "type": "ioBroker get",
+        "z": "e9de432dbfd2a285",
+        "name": "mqtt-topic",
+        "topic": "0_userdata.0.mqtt-devices.Tastaturbeleuchtung.topic",
+        "attrname": "topic",
+        "payloadType": "value",
+        "errOnInvalidState": "true",
+        "x": 1080,
+        "y": 80,
+        "wires": [
+            [
+                "eebe17bf033c40b9"
+            ]
+        ]
     }
 ]
