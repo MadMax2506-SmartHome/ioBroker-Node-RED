@@ -960,7 +960,7 @@
         "type": "function",
         "z": "6e07c8ed867b3ea9",
         "name": "prepare mqtt",
-        "func": "const {objectKey, payload} = msg;\n\nreturn {\n  objectKey: objectKey,\n  topic: `status/${payload}`,\n  qos: 0\n};",
+        "func": "const {objectKey, payload} = msg;\n\nreturn {\n  objectKey: objectKey,\n  topic: `status/${payload}`,\n  action: \"subscribe\",\n  qos: 0\n};",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
