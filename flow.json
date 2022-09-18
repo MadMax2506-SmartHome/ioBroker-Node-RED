@@ -1193,10 +1193,11 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "true",
+        "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 330,
+        "x": 310,
         "y": 180,
         "wires": []
     }
