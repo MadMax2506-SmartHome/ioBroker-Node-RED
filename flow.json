@@ -1202,7 +1202,7 @@
         "id": "3705ae16d9b4183c",
         "type": "inject",
         "z": "8706d1775ed872de",
-        "name": "",
+        "name": "Init object key",
         "props": [
             {
                 "p": "objectKey",
@@ -1215,7 +1215,7 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 110,
+        "x": 140,
         "y": 400,
         "wires": [
             [
