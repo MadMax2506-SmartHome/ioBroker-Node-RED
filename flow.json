@@ -562,7 +562,7 @@
         "wires": [
             [
                 "2abcd4a9bbac8baf",
-                "d5b43606ce71daf5"
+                "9ef150b533d88d13"
             ]
         ]
     },
@@ -683,11 +683,30 @@
         "attrname": "topic",
         "payloadType": "value",
         "errOnInvalidState": "true",
-        "x": 1060,
-        "y": 320,
+        "x": 1160,
+        "y": 340,
         "wires": [
             [
                 "62bb0e4d3f3731e3"
+            ]
+        ]
+    },
+    {
+        "id": "9ef150b533d88d13",
+        "type": "function",
+        "z": "e9de432dbfd2a285",
+        "name": "",
+        "func": "\nreturn {};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 280,
+        "wires": [
+            [
+                "d5b43606ce71daf5"
             ]
         ]
     }
