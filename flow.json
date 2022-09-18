@@ -862,7 +862,7 @@
         "type": "function",
         "z": "6e07c8ed867b3ea9",
         "name": "prepare data",
-        "func": "const objectKey = flow.get(\"objectKey\");\n\nconst { payload } = msg;\nconst {\n    status,\n    color,\n    orientation,\n    typ,\n    time\n} = payload;\n\nreturn [\n    { topic: `${objectKey}.active`, payload: status === \"active\" },\n    { topic: `${objectKey}.animation_time`, payload: animationTime },\n    { topic: `${objectKey}.animation_typ`, payload: animationTyp },\n    { topic: `${objectKey}.color`, payload: JSON.stringify(color) },\n    { topic: `${objectKey}.orientation`, payload: orientation }\n];",
+        "func": "const objectKey = flow.get(\"objectKey\");\n\nconst { payload } = msg;\nconst {\n    status,\n    color,\n    orientation,\n    typ,\n    time\n} = payload;\n\nreturn [\n    { topic: `${objectKey}.active`, payload: status === \"active\" },\n    { topic: `${objectKey}.animation_time`, payload: time },\n    { topic: `${objectKey}.animation_typ`, payload: typ },\n    { topic: `${objectKey}.color`, payload: JSON.stringify(color) },\n    { topic: `${objectKey}.orientation`, payload: orientation }\n];",
         "outputs": 5,
         "noerr": 0,
         "initialize": "",
@@ -1073,7 +1073,7 @@
         "id": "3705ae16d9b4183c",
         "type": "inject",
         "z": "8706d1775ed872de",
-        "name": "Init object key",
+        "name": "objectKey",
         "props": [
             {
                 "p": "objectKey",
@@ -1086,7 +1086,7 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 160,
+        "x": 140,
         "y": 60,
         "wires": [
             [
@@ -1109,7 +1109,7 @@
         "stateUnit": "",
         "stateMin": "",
         "stateMax": "",
-        "x": 550,
+        "x": 510,
         "y": 60,
         "wires": []
     },
@@ -1118,7 +1118,7 @@
         "type": "subflow:6e07c8ed867b3ea9",
         "z": "8706d1775ed872de",
         "name": "",
-        "x": 340,
+        "x": 320,
         "y": 60,
         "wires": [
             [
@@ -1135,6 +1135,144 @@
             ],
             [
                 "34f6a7ebcd73c961"
+            ]
+        ]
+    },
+    {
+        "id": "3ddb0f14cf3ba513",
+        "type": "inject",
+        "z": "8706d1775ed872de",
+        "name": "objectKey",
+        "props": [
+            {
+                "p": "objectKey",
+                "v": "0_userdata.0.mqtt-devices.Wandbeleuchtung",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 140,
+        "y": 160,
+        "wires": [
+            [
+                "fdfcca655b62ace5"
+            ]
+        ]
+    },
+    {
+        "id": "ceb0add6e5d3a398",
+        "type": "ioBroker out",
+        "z": "8706d1775ed872de",
+        "name": "device-value",
+        "topic": "",
+        "ack": "false",
+        "autoCreate": "false",
+        "stateName": "",
+        "role": "",
+        "payloadType": "",
+        "readonly": "",
+        "stateUnit": "",
+        "stateMin": "",
+        "stateMax": "",
+        "x": 510,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "fdfcca655b62ace5",
+        "type": "subflow:6e07c8ed867b3ea9",
+        "z": "8706d1775ed872de",
+        "name": "",
+        "x": 320,
+        "y": 160,
+        "wires": [
+            [
+                "ceb0add6e5d3a398"
+            ],
+            [
+                "ceb0add6e5d3a398"
+            ],
+            [
+                "ceb0add6e5d3a398"
+            ],
+            [
+                "ceb0add6e5d3a398"
+            ],
+            [
+                "ceb0add6e5d3a398"
+            ]
+        ]
+    },
+    {
+        "id": "1474a61a361739cf",
+        "type": "inject",
+        "z": "8706d1775ed872de",
+        "name": "objectKey",
+        "props": [
+            {
+                "p": "objectKey",
+                "v": "0_userdata.0.mqtt-devices.seitliche_Bettbeleuchtung",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 140,
+        "y": 260,
+        "wires": [
+            [
+                "1a3de10b76f3a53f"
+            ]
+        ]
+    },
+    {
+        "id": "94ccff276250563c",
+        "type": "ioBroker out",
+        "z": "8706d1775ed872de",
+        "name": "device-value",
+        "topic": "",
+        "ack": "false",
+        "autoCreate": "false",
+        "stateName": "",
+        "role": "",
+        "payloadType": "",
+        "readonly": "",
+        "stateUnit": "",
+        "stateMin": "",
+        "stateMax": "",
+        "x": 510,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "1a3de10b76f3a53f",
+        "type": "subflow:6e07c8ed867b3ea9",
+        "z": "8706d1775ed872de",
+        "name": "",
+        "x": 320,
+        "y": 260,
+        "wires": [
+            [
+                "94ccff276250563c"
+            ],
+            [
+                "94ccff276250563c"
+            ],
+            [
+                "94ccff276250563c"
+            ],
+            [
+                "94ccff276250563c"
+            ],
+            [
+                "94ccff276250563c"
             ]
         ]
     }
