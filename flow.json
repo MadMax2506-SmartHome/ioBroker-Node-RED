@@ -151,51 +151,51 @@
         ],
         "out": [
             {
-                "x": 1150,
+                "x": 1330,
                 "y": 40,
                 "wires": [
                     {
-                        "id": "93586914e27d9823",
+                        "id": "3212856150f0966d",
                         "port": 0
                     }
                 ]
             },
             {
-                "x": 1180,
+                "x": 1360,
                 "y": 100,
                 "wires": [
                     {
-                        "id": "93586914e27d9823",
+                        "id": "3212856150f0966d",
                         "port": 1
                     }
                 ]
             },
             {
-                "x": 1180,
+                "x": 1360,
                 "y": 160,
                 "wires": [
                     {
-                        "id": "93586914e27d9823",
+                        "id": "3212856150f0966d",
                         "port": 2
                     }
                 ]
             },
             {
-                "x": 1150,
+                "x": 1330,
                 "y": 220,
                 "wires": [
                     {
-                        "id": "93586914e27d9823",
+                        "id": "3212856150f0966d",
                         "port": 3
                     }
                 ]
             },
             {
-                "x": 1170,
+                "x": 1350,
                 "y": 280,
                 "wires": [
                     {
-                        "id": "93586914e27d9823",
+                        "id": "3212856150f0966d",
                         "port": 4
                     }
                 ]
@@ -212,6 +212,87 @@
             "orientation"
         ],
         "icon": "node-red-contrib-polymer/ui_slider.png"
+    },
+    {
+        "id": "c568e9a555f7d908",
+        "type": "subflow",
+        "name": "extract values from light configuration",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 40,
+                "y": 160,
+                "wires": [
+                    {
+                        "id": "93586914e27d9823"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 410,
+                "y": 40,
+                "wires": [
+                    {
+                        "id": "93586914e27d9823",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 440,
+                "y": 100,
+                "wires": [
+                    {
+                        "id": "93586914e27d9823",
+                        "port": 1
+                    }
+                ]
+            },
+            {
+                "x": 440,
+                "y": 160,
+                "wires": [
+                    {
+                        "id": "93586914e27d9823",
+                        "port": 2
+                    }
+                ]
+            },
+            {
+                "x": 410,
+                "y": 220,
+                "wires": [
+                    {
+                        "id": "93586914e27d9823",
+                        "port": 3
+                    }
+                ]
+            },
+            {
+                "x": 430,
+                "y": 280,
+                "wires": [
+                    {
+                        "id": "93586914e27d9823",
+                        "port": 4
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#C7E9C0",
+        "outputLabels": [
+            "active",
+            "animation_time",
+            "animation_type",
+            "color",
+            "orientation"
+        ],
+        "icon": "node-red/light.svg"
     },
     {
         "id": "140dcbb93b137d2d",
@@ -858,34 +939,6 @@
         ]
     },
     {
-        "id": "93586914e27d9823",
-        "type": "function",
-        "z": "6e07c8ed867b3ea9",
-        "name": "prepare data",
-        "func": "const objectKey = flow.get(\"objectKey\");\n\nconst { payload } = msg;\nconst {\n    status,\n    color,\n    orientation,\n    typ,\n    time\n} = payload;\n\nreturn [\n    { topic: `${objectKey}.active`, payload: status },\n    { topic: `${objectKey}.animation_time`, payload: time },\n    { topic: `${objectKey}.animation_typ`, payload: typ },\n    { topic: `${objectKey}.color`, payload: JSON.stringify(color) },\n    { topic: `${objectKey}.orientation`, payload: orientation }\n];",
-        "outputs": 5,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 950,
-        "y": 160,
-        "wires": [
-            [],
-            [],
-            [],
-            [],
-            []
-        ],
-        "outputLabels": [
-            "active",
-            "animation_time",
-            "animation_typ",
-            "color",
-            "orientation"
-        ]
-    },
-    {
         "id": "956a3865705a9cc8",
         "type": "function",
         "z": "6e07c8ed867b3ea9",
@@ -957,8 +1010,50 @@
         "y": 160,
         "wires": [
             [
-                "93586914e27d9823"
+                "3212856150f0966d"
             ]
+        ]
+    },
+    {
+        "id": "3212856150f0966d",
+        "type": "subflow:c568e9a555f7d908",
+        "z": "6e07c8ed867b3ea9",
+        "x": 1010,
+        "y": 160,
+        "wires": [
+            [],
+            [],
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "93586914e27d9823",
+        "type": "function",
+        "z": "c568e9a555f7d908",
+        "name": "prepare data",
+        "func": "const objectKey = flow.get(\"objectKey\");\n\nconst { payload } = msg;\nconst {\n    status,\n    color,\n    orientation,\n    typ,\n    time\n} = payload;\n\nreturn [\n    { topic: `${objectKey}.active`, payload: status },\n    { topic: `${objectKey}.animation_time`, payload: time },\n    { topic: `${objectKey}.animation_typ`, payload: typ },\n    { topic: `${objectKey}.color`, payload: JSON.stringify(color) },\n    { topic: `${objectKey}.orientation`, payload: orientation }\n];",
+        "outputs": 5,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 170,
+        "y": 160,
+        "wires": [
+            [],
+            [],
+            [],
+            [],
+            []
+        ],
+        "outputLabels": [
+            "active",
+            "animation_time",
+            "animation_typ",
+            "color",
+            "orientation"
         ]
     },
     {
