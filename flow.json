@@ -203,11 +203,11 @@
         "in": [],
         "out": [
             {
-                "x": 620,
+                "x": 780,
                 "y": 60,
                 "wires": [
                     {
-                        "id": "1536fc7b3a87ffbf",
+                        "id": "02a20a63632fa5b0",
                         "port": 0
                     }
                 ]
@@ -839,7 +839,9 @@
         "x": 470,
         "y": 60,
         "wires": [
-            []
+            [
+                "02a20a63632fa5b0"
+            ]
         ]
     },
     {
@@ -858,6 +860,25 @@
         "x": 310,
         "y": 200,
         "wires": []
+    },
+    {
+        "id": "02a20a63632fa5b0",
+        "type": "function",
+        "z": "3f60c6b39ab30602",
+        "name": "parse",
+        "func": "const { payload } = msg;\nreturn { ...payload }",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 650,
+        "y": 60,
+        "wires": [
+            [
+                "5a6a7b339782ae3d"
+            ]
+        ]
     },
     {
         "id": "0e87eb94338d50e5",
