@@ -1172,13 +1172,7 @@
         "type": "inject",
         "z": "43be9f181fabd3e8",
         "name": "empty object",
-        "props": [
-            {
-                "p": "t",
-                "v": "a",
-                "vt": "str"
-            }
-        ],
+        "props": [],
         "repeat": "",
         "crontab": "",
         "once": false,
