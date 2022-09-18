@@ -922,8 +922,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 90,
-        "y": 220,
+        "x": 70,
+        "y": 60,
         "wires": [
             [
                 "5bf22605b46adc1f"
@@ -941,29 +941,10 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 270,
-        "y": 220,
+        "x": 250,
+        "y": 60,
         "wires": [
-            [
-                "30d644030b1bd7f0"
-            ]
+            []
         ]
-    },
-    {
-        "id": "30d644030b1bd7f0",
-        "type": "debug",
-        "z": "43be9f181fabd3e8",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 410,
-        "y": 220,
-        "wires": []
     }
 ]
