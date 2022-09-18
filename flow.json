@@ -1256,7 +1256,7 @@
         "type": "debug",
         "z": "8706d1775ed872de",
         "name": "",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
