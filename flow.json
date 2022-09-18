@@ -1403,7 +1403,7 @@
         "type": "function",
         "z": "8706d1775ed872de",
         "name": "map json",
-        "func": "const { info: { id } , config } = msg;\n\nreturn {\n    objectKey: id,\n    payload: {...config}\n}",
+        "func": "const { info: { id } , config } = msg.payload;\n\nreturn {\n    objectKey: id,\n    payload: {...config}\n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1413,8 +1413,26 @@
         "y": 360,
         "wires": [
             [
-                "e698be51ee009282"
+                "e698be51ee009282",
+                "4d295af3c7b587d7"
             ]
         ]
+    },
+    {
+        "id": "4d295af3c7b587d7",
+        "type": "debug",
+        "z": "8706d1775ed872de",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 390,
+        "y": 480,
+        "wires": []
     }
 ]
