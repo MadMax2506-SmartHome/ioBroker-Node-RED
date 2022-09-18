@@ -862,7 +862,7 @@
         "type": "function",
         "z": "6e07c8ed867b3ea9",
         "name": "prepare data",
-        "func": "const objectKey = flow.get(\"objectKey\");\n\nconst { payload } = msg;\nconst {\n    status,\n    color,\n    orientation,\n    animationTyp,\n    animationTime\n} = payload;\n\nreturn [\n    { topic: `${objectKey}.active`, payload: status === \"active\" },\n    { topic: `${objectKey}.animation_time`, payload: animationTime },\n    { topic: `${objectKey}.animation_typ`, payload: animationTyp },\n    { topic: `${objectKey}.color`, payload: JSON.stringify(color) },\n    { topic: `${objectKey}.orientation`, payload: orientation }\n];",
+        "func": "const objectKey = flow.get(\"objectKey\");\n\nconst { payload } = msg;\nconst {\n    status,\n    color,\n    orientation,\n    typ,\n    time\n} = payload;\n\nreturn [\n    { topic: `${objectKey}.active`, payload: status === \"active\" },\n    { topic: `${objectKey}.animation_time`, payload: animationTime },\n    { topic: `${objectKey}.animation_typ`, payload: animationTyp },\n    { topic: `${objectKey}.color`, payload: JSON.stringify(color) },\n    { topic: `${objectKey}.orientation`, payload: orientation }\n];",
         "outputs": 5,
         "noerr": 0,
         "initialize": "",
@@ -884,23 +884,6 @@
             "color",
             "orientation"
         ]
-    },
-    {
-        "id": "a9d504ff17a8e083",
-        "type": "debug",
-        "z": "6e07c8ed867b3ea9",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 790,
-        "y": 300,
-        "wires": []
     },
     {
         "id": "956a3865705a9cc8",
@@ -974,8 +957,7 @@
         "y": 160,
         "wires": [
             [
-                "93586914e27d9823",
-                "a9d504ff17a8e083"
+                "93586914e27d9823"
             ]
         ]
     },
@@ -1088,99 +1070,6 @@
         "wires": []
     },
     {
-        "id": "0e210175c0ca9e61",
-        "type": "ioBroker in",
-        "z": "8706d1775ed872de",
-        "name": "status/deskLightingKeyboard",
-        "topic": "0_userdata.0.mqtt-devices.Tastaturbeleuchtung.id",
-        "payloadType": "value",
-        "onlyack": "",
-        "func": "all",
-        "gap": "",
-        "fireOnStart": "true",
-        "outFormat": "MQTT",
-        "x": 160,
-        "y": 80,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "1e495f12dcdee7aa",
-        "type": "debug",
-        "z": "8706d1775ed872de",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 530,
-        "y": 200,
-        "wires": []
-    },
-    {
-        "id": "2cdacd6736fb3c3d",
-        "type": "function",
-        "z": "8706d1775ed872de",
-        "name": "parse",
-        "func": "const { payload } = msg;\nreturn {\n    topic: `status/${payload}`,\n    qos: 0\n};",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 370,
-        "y": 80,
-        "wires": [
-            [
-                "3af8f1145c7750e7",
-                "1e495f12dcdee7aa"
-            ]
-        ]
-    },
-    {
-        "id": "3af8f1145c7750e7",
-        "type": "mqtt in",
-        "z": "8706d1775ed872de",
-        "name": "mqtt state change",
-        "topic": "",
-        "qos": "2",
-        "datatype": "json",
-        "broker": "9b5dc2b3a2f9fa7c",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 1,
-        "x": 550,
-        "y": 80,
-        "wires": [
-            [
-                "1e495f12dcdee7aa"
-            ]
-        ]
-    },
-    {
-        "id": "3d458690b0b72313",
-        "type": "debug",
-        "z": "8706d1775ed872de",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 570,
-        "y": 440,
-        "wires": []
-    },
-    {
         "id": "3705ae16d9b4183c",
         "type": "inject",
         "z": "8706d1775ed872de",
@@ -1197,8 +1086,8 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 140,
-        "y": 400,
+        "x": 160,
+        "y": 60,
         "wires": [
             [
                 "7a8c5944f4c20677"
@@ -1220,8 +1109,8 @@
         "stateUnit": "",
         "stateMin": "",
         "stateMax": "",
-        "x": 590,
-        "y": 360,
+        "x": 550,
+        "y": 60,
         "wires": []
     },
     {
@@ -1229,43 +1118,24 @@
         "type": "subflow:6e07c8ed867b3ea9",
         "z": "8706d1775ed872de",
         "name": "",
-        "x": 280,
-        "y": 400,
+        "x": 340,
+        "y": 60,
         "wires": [
             [
-                "3d458690b0b72313",
-                "08543c106b8219e2"
+                "34f6a7ebcd73c961"
             ],
             [
-                "3d458690b0b72313",
-                "08543c106b8219e2"
+                "34f6a7ebcd73c961"
             ],
             [
-                "3d458690b0b72313"
+                "34f6a7ebcd73c961"
             ],
             [
-                "3d458690b0b72313"
+                "34f6a7ebcd73c961"
             ],
             [
-                "3d458690b0b72313"
+                "34f6a7ebcd73c961"
             ]
         ]
-    },
-    {
-        "id": "08543c106b8219e2",
-        "type": "debug",
-        "z": "8706d1775ed872de",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 470,
-        "y": 340,
-        "wires": []
     }
 ]
