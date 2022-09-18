@@ -965,7 +965,7 @@
         "type": "function",
         "z": "8706d1775ed872de",
         "name": "prepare data",
-        "func": "const {\n    status,\n    color,\n    orientation,\n    animationTyp,\n    animationTime\n} = msg;\n\nreturn [\n    { key: \"active\", payload: status === \"active\" },\n    { key: \"animation_time\", payload: animationTime },\n    { key: \"animation_typ\", payload: animationTyp },\n    { key: \"color\", payload: JSON.stringify(color) },\n    { key: \"orientation\", payload: orientation }\n];",
+        "func": "const { key, payload } = msg;\nconst {\n    status,\n    color,\n    orientation,\n    animationTyp,\n    animationTime\n} = payload;\n\nreturn [\n    { key: `${key}/active`, payload: status === \"active\" },\n    { key: `${key}/animation_time`, payload: animationTime },\n    { key: `${key}/animation_typ`, payload: animationTyp },\n    { key: `${key}/color`, payload: JSON.stringify(color) },\n    { key: `${key}/orientation`, payload: orientation }\n];",
         "outputs": 5,
         "noerr": 0,
         "initialize": "",
