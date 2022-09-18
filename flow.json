@@ -915,7 +915,7 @@
         "z": "8706d1775ed872de",
         "name": "status/deskLightingKeyboard",
         "topic": "0_userdata.0.mqtt-devices.Tastaturbeleuchtung.id",
-        "payloadType": "object",
+        "payloadType": "value",
         "onlyack": "",
         "func": "all",
         "gap": "",
@@ -925,7 +925,7 @@
         "y": 80,
         "wires": [
             [
-                "1e495f12dcdee7aa"
+                "2cdacd6736fb3c3d"
             ]
         ]
     },
@@ -942,24 +942,23 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 390,
-        "y": 120,
+        "x": 650,
+        "y": 80,
         "wires": []
     },
     {
-        "id": "0296d3d59538300f",
-        "type": "ioBroker in",
+        "id": "2cdacd6736fb3c3d",
+        "type": "function",
         "z": "8706d1775ed872de",
-        "name": "status/devices",
-        "topic": "mqtt.0.status.devices",
-        "payloadType": "value",
-        "onlyack": "",
-        "func": "all",
-        "gap": "",
-        "fireOnStart": "false",
-        "outFormat": "MQTT",
-        "x": 110,
-        "y": 160,
+        "name": "",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 80,
         "wires": [
             [
                 "1e495f12dcdee7aa"
