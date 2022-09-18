@@ -900,6 +900,26 @@
         ]
     },
     {
+        "id": "200a2c980308572d",
+        "type": "ioBroker in",
+        "z": "3f60c6b39ab30602",
+        "name": "value",
+        "topic": "0_userdata.0.mqtt-devices.Tastaturbeleuchtung.id",
+        "payloadType": "value",
+        "onlyack": "",
+        "func": "all",
+        "gap": "",
+        "fireOnStart": "false",
+        "outFormat": "MQTT",
+        "x": 170,
+        "y": 200,
+        "wires": [
+            [
+                "5a6a7b339782ae3d"
+            ]
+        ]
+    },
+    {
         "id": "0e87eb94338d50e5",
         "type": "amazon-echo-hub",
         "z": "e9de432dbfd2a285",
@@ -1055,26 +1075,9 @@
         "y": 120,
         "wires": [
             [
-                "45fe7cf0879da5fc"
+                "631130b7719c11ec"
             ]
         ]
-    },
-    {
-        "id": "45fe7cf0879da5fc",
-        "type": "debug",
-        "z": "43be9f181fabd3e8",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 370,
-        "y": 120,
-        "wires": []
     },
     {
         "id": "502f1f1770636fe1",
@@ -1111,7 +1114,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 450,
-        "y": 220,
+        "y": 160,
         "wires": []
     },
     {
