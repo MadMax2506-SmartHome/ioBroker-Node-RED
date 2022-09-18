@@ -1073,27 +1073,6 @@
         "wires": []
     },
     {
-        "id": "502f1f1770636fe1",
-        "type": "mqtt in",
-        "z": "43be9f181fabd3e8",
-        "name": "device status",
-        "topic": "status/deskLightingKeyboard",
-        "qos": "0",
-        "datatype": "json",
-        "broker": "9b5dc2b3a2f9fa7c",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 110,
-        "y": 220,
-        "wires": [
-            [
-                "c7f424ad731065ab"
-            ]
-        ]
-    },
-    {
         "id": "631130b7719c11ec",
         "type": "debug",
         "z": "43be9f181fabd3e8",
@@ -1106,28 +1085,9 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 450,
-        "y": 160,
+        "x": 1090,
+        "y": 80,
         "wires": []
-    },
-    {
-        "id": "c7f424ad731065ab",
-        "type": "function",
-        "z": "43be9f181fabd3e8",
-        "name": "parse",
-        "func": "const { payload } = msg;\nreturn { ...payload }",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 290,
-        "y": 220,
-        "wires": [
-            [
-                "631130b7719c11ec"
-            ]
-        ]
     },
     {
         "id": "c7e91e59bff51304",
