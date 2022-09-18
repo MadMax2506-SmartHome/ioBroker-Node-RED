@@ -830,7 +830,7 @@
         "name": "device status",
         "topic": "",
         "qos": "2",
-        "datatype": "auto",
+        "datatype": "utf8",
         "broker": "9b5dc2b3a2f9fa7c",
         "nl": false,
         "rap": true,
@@ -1034,6 +1034,44 @@
         "statusType": "auto",
         "x": 370,
         "y": 120,
+        "wires": []
+    },
+    {
+        "id": "502f1f1770636fe1",
+        "type": "mqtt in",
+        "z": "43be9f181fabd3e8",
+        "name": "device status",
+        "topic": "status/deskLightingKeyboard",
+        "qos": "0",
+        "datatype": "json",
+        "broker": "9b5dc2b3a2f9fa7c",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 220,
+        "wires": [
+            [
+                "631130b7719c11ec"
+            ]
+        ]
+    },
+    {
+        "id": "631130b7719c11ec",
+        "type": "debug",
+        "z": "43be9f181fabd3e8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 290,
+        "y": 220,
         "wires": []
     }
 ]
