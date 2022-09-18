@@ -884,7 +884,6 @@
         "id": "ebe03b7602c0d47c",
         "type": "inject",
         "z": "3f60c6b39ab30602",
-        "d": true,
         "name": "empty object",
         "props": [
             {
@@ -1074,19 +1073,6 @@
         "wires": []
     },
     {
-        "id": "2352fa6f9ca60f63",
-        "type": "subflow:3f60c6b39ab30602",
-        "z": "43be9f181fabd3e8",
-        "name": "",
-        "x": 140,
-        "y": 120,
-        "wires": [
-            [
-                "631130b7719c11ec"
-            ]
-        ]
-    },
-    {
         "id": "502f1f1770636fe1",
         "type": "mqtt in",
         "z": "43be9f181fabd3e8",
@@ -1140,6 +1126,105 @@
         "wires": [
             [
                 "631130b7719c11ec"
+            ]
+        ]
+    },
+    {
+        "id": "c7e91e59bff51304",
+        "type": "ioBroker get",
+        "z": "43be9f181fabd3e8",
+        "name": "device-id",
+        "topic": "0_userdata.0.mqtt-devices.Tastaturbeleuchtung.id",
+        "attrname": "mqttTopic",
+        "payloadType": "value",
+        "errOnInvalidState": "nothing",
+        "x": 280,
+        "y": 60,
+        "wires": [
+            [
+                "f48c895ace83c757"
+            ]
+        ]
+    },
+    {
+        "id": "a581f40ed6be1755",
+        "type": "function",
+        "z": "43be9f181fabd3e8",
+        "name": "parse",
+        "func": "return {\n    topic: msg.mqttTopic\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f48c895ace83c757",
+        "type": "mqtt in",
+        "z": "43be9f181fabd3e8",
+        "name": "device status",
+        "topic": "",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "9b5dc2b3a2f9fa7c",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 1,
+        "x": 650,
+        "y": 60,
+        "wires": [
+            [
+                "6bb92de4e72d4c85"
+            ]
+        ]
+    },
+    {
+        "id": "6bb92de4e72d4c85",
+        "type": "function",
+        "z": "43be9f181fabd3e8",
+        "name": "parse",
+        "func": "const { payload } = msg;\nreturn { ...payload }",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 60,
+        "wires": [
+            [
+                "631130b7719c11ec"
+            ]
+        ]
+    },
+    {
+        "id": "39ce844024df1bde",
+        "type": "inject",
+        "z": "43be9f181fabd3e8",
+        "name": "empty object",
+        "props": [
+            {
+                "p": "t",
+                "v": "a",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 110,
+        "y": 60,
+        "wires": [
+            [
+                "c7e91e59bff51304"
             ]
         ]
     }
