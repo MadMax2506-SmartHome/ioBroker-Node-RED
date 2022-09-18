@@ -858,23 +858,6 @@
         ]
     },
     {
-        "id": "3bf75f038d579906",
-        "type": "function",
-        "z": "6e07c8ed867b3ea9",
-        "name": "mock",
-        "func": "return {\n    payload: {\n      status: \"active\",\n      color: {\n        red: 55,\n        green: 20,\n        blue: 12\n      },\n      orientation: 'l',\n      animationTyp: \"fade\",\n      animationTime: 400\n    }\n};",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 670,
-        "y": 60,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "93586914e27d9823",
         "type": "function",
         "z": "6e07c8ed867b3ea9",
@@ -1186,7 +1169,7 @@
         "type": "debug",
         "z": "8706d1775ed872de",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
