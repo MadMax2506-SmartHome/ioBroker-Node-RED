@@ -862,7 +862,7 @@
         "type": "function",
         "z": "6e07c8ed867b3ea9",
         "name": "prepare data",
-        "func": "const objectKey = flow.get(\"objectKey\");\n\nconst { payload } = msg;\nconst {\n    status,\n    color,\n    orientation,\n    typ,\n    time\n} = payload;\n\nreturn [\n    { topic: `${objectKey}.active`, payload: status === \"active\" },\n    { topic: `${objectKey}.animation_time`, payload: time },\n    { topic: `${objectKey}.animation_typ`, payload: typ },\n    { topic: `${objectKey}.color`, payload: JSON.stringify(color) },\n    { topic: `${objectKey}.orientation`, payload: orientation }\n];",
+        "func": "const objectKey = flow.get(\"objectKey\");\n\nconst { payload } = msg;\nconst {\n    status,\n    color,\n    orientation,\n    typ,\n    time\n} = payload;\n\nreturn [\n    { topic: `${objectKey}.active`, payload: status },\n    { topic: `${objectKey}.animation_time`, payload: time },\n    { topic: `${objectKey}.animation_typ`, payload: typ },\n    { topic: `${objectKey}.color`, payload: JSON.stringify(color) },\n    { topic: `${objectKey}.orientation`, payload: orientation }\n];",
         "outputs": 5,
         "noerr": 0,
         "initialize": "",
@@ -957,27 +957,9 @@
         "y": 160,
         "wires": [
             [
-                "93586914e27d9823",
-                "c909e4997759fbd6"
+                "93586914e27d9823"
             ]
         ]
-    },
-    {
-        "id": "c909e4997759fbd6",
-        "type": "debug",
-        "z": "6e07c8ed867b3ea9",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload.status",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 850,
-        "y": 260,
-        "wires": []
     },
     {
         "id": "0e87eb94338d50e5",
