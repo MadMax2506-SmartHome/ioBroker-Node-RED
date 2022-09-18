@@ -926,7 +926,7 @@
         "type": "function",
         "z": "8706d1775ed872de",
         "name": "parse",
-        "func": "const { payload } = msg;\nreturn {\n    topic: `status/${payload}`\n};",
+        "func": "const { payload } = msg;\nreturn {\n    topic: `status/${payload}`,\n    qos: 0\n};",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
