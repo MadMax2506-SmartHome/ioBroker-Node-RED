@@ -1378,5 +1378,80 @@
         "x": 770,
         "y": 420,
         "wires": []
+    },
+    {
+        "id": "1474a61a361739cf",
+        "type": "inject",
+        "z": "8706d1775ed872de",
+        "name": "objectKey",
+        "props": [
+            {
+                "p": "objectKey",
+                "v": "0_userdata.0.mqtt-devices.seitliche_Bettbeleuchtung",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 140,
+        "y": 260,
+        "wires": [
+            [
+                "1a3de10b76f3a53f"
+            ]
+        ]
+    },
+    {
+        "id": "3ddb0f14cf3ba513",
+        "type": "inject",
+        "z": "8706d1775ed872de",
+        "name": "objectKey",
+        "props": [
+            {
+                "p": "objectKey",
+                "v": "0_userdata.0.mqtt-devices.Wandbeleuchtung",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 140,
+        "y": 160,
+        "wires": [
+            [
+                "fdfcca655b62ace5"
+            ]
+        ]
+    },
+    {
+        "id": "3705ae16d9b4183c",
+        "type": "inject",
+        "z": "8706d1775ed872de",
+        "name": "objectKey",
+        "props": [
+            {
+                "p": "objectKey",
+                "v": "0_userdata.0.mqtt-devices.Tastaturbeleuchtung",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 140,
+        "y": 60,
+        "wires": [
+            [
+                "7a8c5944f4c20677"
+            ]
+        ]
     }
 ]
