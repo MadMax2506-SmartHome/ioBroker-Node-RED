@@ -965,7 +965,7 @@
         "type": "function",
         "z": "8706d1775ed872de",
         "name": "prepare data",
-        "func": "const { key, payload } = msg;\nconst {\n    status,\n    color,\n    orientation,\n    animationTyp,\n    animationTime\n} = payload;\n\nreturn [\n    { key: `${key}/active`, payload: status === \"active\" },\n    { key: `${key}/animation_time`, payload: animationTime },\n    { key: `${key}/animation_typ`, payload: animationTyp },\n    { key: `${key}/color`, payload: JSON.stringify(color) },\n    { key: `${key}/orientation`, payload: orientation }\n];",
+        "func": "const { key, payload } = msg;\nconst {\n    status,\n    color,\n    orientation,\n    animationTyp,\n    animationTime\n} = payload;\n\nreturn [\n    { key: `${key}.active`, payload: status === \"active\" },\n    { key: `${key}.animation_time`, payload: animationTime },\n    { key: `${key}.animation_typ`, payload: animationTyp },\n    { key: `${key}.color`, payload: JSON.stringify(color) },\n    { key: `${key}.orientation`, payload: orientation }\n];",
         "outputs": 5,
         "noerr": 0,
         "initialize": "",
@@ -1022,29 +1022,9 @@
         "name": "",
         "props": [
             {
-                "p": "status",
-                "v": "active",
+                "p": "key",
+                "v": "0_userdata.0.mqtt-devices.Tastaturbeleuchtung",
                 "vt": "str"
-            },
-            {
-                "p": "color",
-                "v": "{\"red\":255,\"green\":0,\"blue\":0}",
-                "vt": "json"
-            },
-            {
-                "p": "orientation",
-                "v": "l",
-                "vt": "str"
-            },
-            {
-                "p": "animationTyp",
-                "v": "fade",
-                "vt": "str"
-            },
-            {
-                "p": "animationTime",
-                "v": "2",
-                "vt": "num"
             }
         ],
         "repeat": "",
@@ -1052,7 +1032,26 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 290,
+        "x": 110,
+        "y": 400,
+        "wires": [
+            [
+                "2cefe047e6be6b8e"
+            ]
+        ]
+    },
+    {
+        "id": "2cefe047e6be6b8e",
+        "type": "function",
+        "z": "8706d1775ed872de",
+        "name": "",
+        "func": "\nreturn {\n    key: msg.key,\n    payload: {\n      status: \"active\",\n      color: {\n        red: 55,\n        green: 20,\n        blue: 12\n      },\n      orientation: 'l',\n      animationTyp: \"fade\",\n      animationTime: 400\n    }\n};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
         "y": 400,
         "wires": [
             [
