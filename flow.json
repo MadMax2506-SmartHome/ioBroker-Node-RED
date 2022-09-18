@@ -1473,7 +1473,7 @@
         "z": "8706d1775ed872de",
         "name": "toPublish",
         "topic": "0_userdata.0.mqtt-devices.Tastaturbeleuchtung.toPublish",
-        "payloadType": "object",
+        "payloadType": "value",
         "onlyack": "",
         "func": "rbe",
         "gap": "",
