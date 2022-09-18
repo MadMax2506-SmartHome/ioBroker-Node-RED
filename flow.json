@@ -203,11 +203,11 @@
         "in": [],
         "out": [
             {
-                "x": 720,
-                "y": 140,
+                "x": 620,
+                "y": 60,
                 "wires": [
                     {
-                        "id": "b58f303274fa1867",
+                        "id": "1536fc7b3a87ffbf",
                         "port": 0
                     }
                 ]
@@ -647,7 +647,7 @@
         "id": "44c08d1113fd255c",
         "type": "ioBroker get",
         "z": "029142ac14ba233b",
-        "name": "mqtt-topic",
+        "name": "device-id",
         "topic": "0_userdata.0.mqtt-devices.Tastaturbeleuchtung.id",
         "attrname": "mqttTopic",
         "payloadType": "value",
@@ -701,7 +701,7 @@
         "id": "4e8da7ce0ace9b8d",
         "type": "ioBroker get",
         "z": "bb9b6a98f8635a55",
-        "name": "mqtt-topic",
+        "name": "device-id",
         "topic": "0_userdata.0.mqtt-devices.Wandbeleuchtung.id",
         "attrname": "mqttTopic",
         "payloadType": "value",
@@ -755,7 +755,7 @@
         "id": "83578f4e952f4b59",
         "type": "ioBroker get",
         "z": "0d47d69ad720d4a1",
-        "name": "mqtt-topic",
+        "name": "device-id",
         "topic": "0_userdata.0.mqtt-devices.seitliche_Bettbeleuchtung.id",
         "attrname": "mqttTopic",
         "payloadType": "value",
@@ -790,13 +790,51 @@
         "id": "b58f303274fa1867",
         "type": "ioBroker get",
         "z": "3f60c6b39ab30602",
-        "name": "",
-        "topic": "",
-        "attrname": "payload",
+        "name": "device-id",
+        "topic": "0_userdata.0.mqtt-devices.Tastaturbeleuchtung.id",
+        "attrname": "mqttTopic",
         "payloadType": "value",
         "errOnInvalidState": "nothing",
-        "x": 340,
-        "y": 220,
+        "x": 100,
+        "y": 60,
+        "wires": [
+            [
+                "1536fc7b3a87ffbf"
+            ]
+        ]
+    },
+    {
+        "id": "f3cf6ce1ba12712f",
+        "type": "function",
+        "z": "3f60c6b39ab30602",
+        "name": "parse",
+        "func": "return {\n    topic: msg.mqttTopic\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1536fc7b3a87ffbf",
+        "type": "mqtt in",
+        "z": "3f60c6b39ab30602",
+        "name": "device status",
+        "topic": "",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "9b5dc2b3a2f9fa7c",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 1,
+        "x": 470,
+        "y": 60,
         "wires": [
             []
         ]
@@ -949,22 +987,33 @@
         "wires": []
     },
     {
-        "id": "8705d3cc911bde30",
-        "type": "mqtt in",
+        "id": "2352fa6f9ca60f63",
+        "type": "subflow:3f60c6b39ab30602",
         "z": "43be9f181fabd3e8",
         "name": "",
-        "topic": "",
-        "qos": "0",
-        "datatype": "utf8",
-        "broker": "9b5dc2b3a2f9fa7c",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 1,
-        "x": 470,
-        "y": 200,
+        "x": 140,
+        "y": 120,
         "wires": [
-            []
+            [
+                "45fe7cf0879da5fc"
+            ]
         ]
+    },
+    {
+        "id": "45fe7cf0879da5fc",
+        "type": "debug",
+        "z": "43be9f181fabd3e8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 370,
+        "y": 120,
+        "wires": []
     }
 ]
