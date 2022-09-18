@@ -663,7 +663,7 @@
         "name": "mqtt-topic",
         "topic": "0_userdata.0.mqtt-devices.Tastaturbeleuchtung.topic",
         "attrname": "topic",
-        "payloadType": "value",
+        "payloadType": "object",
         "errOnInvalidState": "true",
         "x": 1080,
         "y": 80,
