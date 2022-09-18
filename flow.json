@@ -957,9 +957,27 @@
         "y": 160,
         "wires": [
             [
-                "93586914e27d9823"
+                "93586914e27d9823",
+                "c909e4997759fbd6"
             ]
         ]
+    },
+    {
+        "id": "c909e4997759fbd6",
+        "type": "debug",
+        "z": "6e07c8ed867b3ea9",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload.status",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 850,
+        "y": 260,
+        "wires": []
     },
     {
         "id": "0e87eb94338d50e5",
