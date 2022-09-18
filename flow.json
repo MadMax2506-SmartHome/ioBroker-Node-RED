@@ -195,6 +195,30 @@
         "icon": "node-red/bridge.svg"
     },
     {
+        "id": "3f60c6b39ab30602",
+        "type": "subflow",
+        "name": "keyboard light reciever",
+        "info": "",
+        "category": "",
+        "in": [],
+        "out": [
+            {
+                "x": 720,
+                "y": 140,
+                "wires": [
+                    {
+                        "id": "b58f303274fa1867",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#FFAAAA",
+        "icon": "node-red/link-out.svg"
+    },
+    {
         "id": "140dcbb93b137d2d",
         "type": "ui_tab",
         "name": "Home",
@@ -605,7 +629,7 @@
         "type": "function",
         "z": "029142ac14ba233b",
         "name": "parse",
-        "func": "const {mqttTopic: topic, payload } = msg;\nreturn { payload: payload, topic: topic };",
+        "func": "const {mqttTopic: topic, payload } = msg;\nreturn { payload: payload, topic: `conf/${topic}` };",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -624,7 +648,7 @@
         "type": "ioBroker get",
         "z": "029142ac14ba233b",
         "name": "mqtt-topic",
-        "topic": "0_userdata.0.mqtt-devices.Tastaturbeleuchtung.topic",
+        "topic": "0_userdata.0.mqtt-devices.Tastaturbeleuchtung.id",
         "attrname": "mqttTopic",
         "payloadType": "value",
         "errOnInvalidState": "true",
@@ -659,7 +683,7 @@
         "type": "function",
         "z": "bb9b6a98f8635a55",
         "name": "parse",
-        "func": "const {mqttTopic: topic, payload } = msg;\nreturn { payload: payload, topic: topic };",
+        "func": "const {mqttTopic: topic, payload } = msg;\nreturn { payload: payload, topic: `conf/${topic}` };",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -678,7 +702,7 @@
         "type": "ioBroker get",
         "z": "bb9b6a98f8635a55",
         "name": "mqtt-topic",
-        "topic": "0_userdata.0.mqtt-devices.Wandbeleuchtung.topic",
+        "topic": "0_userdata.0.mqtt-devices.Wandbeleuchtung.id",
         "attrname": "mqttTopic",
         "payloadType": "value",
         "errOnInvalidState": "true",
@@ -713,7 +737,7 @@
         "type": "function",
         "z": "0d47d69ad720d4a1",
         "name": "parse",
-        "func": "const {mqttTopic: topic, payload } = msg;\nreturn { payload: payload, topic: topic };",
+        "func": "const {mqttTopic: topic, payload } = msg;\nreturn { payload: payload, topic: `conf/${topic}` };",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -732,7 +756,7 @@
         "type": "ioBroker get",
         "z": "0d47d69ad720d4a1",
         "name": "mqtt-topic",
-        "topic": "0_userdata.0.mqtt-devices.seitliche_Bettbeleuchtung.topic",
+        "topic": "0_userdata.0.mqtt-devices.seitliche_Bettbeleuchtung.id",
         "attrname": "mqttTopic",
         "payloadType": "value",
         "errOnInvalidState": "true",
@@ -761,6 +785,21 @@
         "x": 510,
         "y": 40,
         "wires": []
+    },
+    {
+        "id": "b58f303274fa1867",
+        "type": "ioBroker get",
+        "z": "3f60c6b39ab30602",
+        "name": "",
+        "topic": "",
+        "attrname": "payload",
+        "payloadType": "value",
+        "errOnInvalidState": "nothing",
+        "x": 340,
+        "y": 220,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "0e87eb94338d50e5",
