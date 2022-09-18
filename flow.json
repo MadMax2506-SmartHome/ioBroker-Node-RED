@@ -783,8 +783,8 @@
         "port": "80",
         "processinput": "2",
         "discovery": true,
-        "x": 150,
-        "y": 360,
+        "x": 110,
+        "y": 100,
         "wires": [
             [
                 "19b6b90843ad1f70"
@@ -802,8 +802,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 370,
-        "y": 140,
+        "x": 310,
+        "y": 100,
         "wires": [
             [
                 "31716c21d3f492c1",
@@ -818,8 +818,8 @@
         "z": "e9de432dbfd2a285",
         "name": "Tastaturbeleuchtung",
         "topic": "Arduino Tastaturbeleuchtung",
-        "x": 600,
-        "y": 80,
+        "x": 520,
+        "y": 40,
         "wires": [
             [
                 "40a55736717d3afa"
@@ -833,8 +833,8 @@
         "z": "e9de432dbfd2a285",
         "name": "Wandbeleuchtung",
         "topic": "Arduino Wandbeleuchtung am Bett",
-        "x": 590,
-        "y": 140,
+        "x": 510,
+        "y": 100,
         "wires": [
             [
                 "b32fbf2207031e1d"
@@ -848,8 +848,8 @@
         "z": "e9de432dbfd2a285",
         "name": "seitliche Bettbeleuchtung",
         "topic": "Arduino seitliche Beleuchtung am Bett",
-        "x": 610,
-        "y": 200,
+        "x": 530,
+        "y": 160,
         "wires": [
             [
                 "d2d57eb5bc89a750"
@@ -862,8 +862,8 @@
         "type": "subflow:029142ac14ba233b",
         "z": "e9de432dbfd2a285",
         "name": "",
-        "x": 840,
-        "y": 80,
+        "x": 760,
+        "y": 40,
         "wires": []
     },
     {
@@ -871,8 +871,8 @@
         "type": "subflow:bb9b6a98f8635a55",
         "z": "e9de432dbfd2a285",
         "name": "",
-        "x": 820,
-        "y": 140,
+        "x": 740,
+        "y": 100,
         "wires": []
     },
     {
@@ -880,8 +880,8 @@
         "type": "subflow:0d47d69ad720d4a1",
         "z": "e9de432dbfd2a285",
         "name": "",
-        "x": 860,
-        "y": 200,
+        "x": 780,
+        "y": 160,
         "wires": []
     },
     {
