@@ -295,6 +295,24 @@
         "icon": "node-red/light.svg"
     },
     {
+        "id": "7a87c0184e6c4f62",
+        "type": "subflow",
+        "name": "Subflow 1",
+        "info": "",
+        "in": [
+            {
+                "x": 40,
+                "y": 40,
+                "wires": [
+                    {
+                        "id": "b64c41f3f4d620ad"
+                    }
+                ]
+            }
+        ],
+        "out": []
+    },
+    {
         "id": "140dcbb93b137d2d",
         "type": "ui_tab",
         "name": "Home",
@@ -1076,6 +1094,58 @@
         ]
     },
     {
+        "id": "0ed311b9ff7be75f",
+        "type": "ioBroker get",
+        "z": "7a87c0184e6c4f62",
+        "name": "",
+        "topic": "",
+        "attrname": "payload",
+        "payloadType": "value",
+        "errOnInvalidState": "nothing",
+        "x": 360,
+        "y": 40,
+        "wires": [
+            [
+                "876140b368d28c38"
+            ]
+        ]
+    },
+    {
+        "id": "b64c41f3f4d620ad",
+        "type": "function",
+        "z": "7a87c0184e6c4f62",
+        "name": "parse topic",
+        "func": "const { objectKey } = msg;\n\nreturn {\n    topic: `${objectKey}.toPublish`\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 170,
+        "y": 40,
+        "wires": [
+            [
+                "0ed311b9ff7be75f"
+            ]
+        ]
+    },
+    {
+        "id": "876140b368d28c38",
+        "type": "debug",
+        "z": "7a87c0184e6c4f62",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 570,
+        "y": 40,
+        "wires": []
+    },
+    {
         "id": "0e87eb94338d50e5",
         "type": "amazon-echo-hub",
         "z": "e9de432dbfd2a285",
@@ -1232,8 +1302,8 @@
         "type": "subflow:6e07c8ed867b3ea9",
         "z": "8706d1775ed872de",
         "name": "",
-        "x": 370,
-        "y": 220,
+        "x": 390,
+        "y": 420,
         "wires": [
             [
                 "ceb0add6e5d3a398"
@@ -1257,8 +1327,8 @@
         "type": "subflow:6e07c8ed867b3ea9",
         "z": "8706d1775ed872de",
         "name": "",
-        "x": 370,
-        "y": 320,
+        "x": 390,
+        "y": 520,
         "wires": [
             [
                 "ceb0add6e5d3a398"
@@ -1282,8 +1352,8 @@
         "type": "subflow:c568e9a555f7d908",
         "z": "8706d1775ed872de",
         "name": "",
-        "x": 470,
-        "y": 420,
+        "x": 490,
+        "y": 620,
         "wires": [
             [
                 "ceb0add6e5d3a398"
@@ -1315,8 +1385,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 90,
-        "y": 420,
+        "x": 110,
+        "y": 620,
         "wires": [
             [
                 "948e666dbbfdf81b"
@@ -1334,8 +1404,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 260,
-        "y": 420,
+        "x": 280,
+        "y": 620,
         "wires": [
             [
                 "e698be51ee009282"
@@ -1359,8 +1429,8 @@
         "once": true,
         "onceDelay": "0.5",
         "topic": "",
-        "x": 140,
-        "y": 320,
+        "x": 160,
+        "y": 520,
         "wires": [
             [
                 "1a3de10b76f3a53f"
@@ -1384,8 +1454,8 @@
         "once": true,
         "onceDelay": "0.5",
         "topic": "",
-        "x": 140,
-        "y": 220,
+        "x": 160,
+        "y": 420,
         "wires": [
             [
                 "fdfcca655b62ace5"
@@ -1410,10 +1480,11 @@
         "onceDelay": "0.5",
         "topic": "",
         "x": 140,
-        "y": 120,
+        "y": 160,
         "wires": [
             [
-                "7a8c5944f4c20677"
+                "7a8c5944f4c20677",
+                "79272606ee5c2d8e"
             ]
         ]
     },
@@ -1466,5 +1537,14 @@
                 "bdfdc233c2e293f7"
             ]
         ]
+    },
+    {
+        "id": "79272606ee5c2d8e",
+        "type": "subflow:7a87c0184e6c4f62",
+        "z": "8706d1775ed872de",
+        "name": "",
+        "x": 340,
+        "y": 200,
+        "wires": []
     }
 ]
