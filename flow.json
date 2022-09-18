@@ -543,7 +543,9 @@
         "x": 830,
         "y": 140,
         "wires": [
-            []
+            [
+                "aef1990c37f6bb58"
+            ]
         ]
     },
     {
@@ -588,7 +590,9 @@
         "x": 870,
         "y": 200,
         "wires": [
-            []
+            [
+                "78b6b1b5dad5965a"
+            ]
         ]
     },
     {
@@ -650,7 +654,7 @@
         "correl": "",
         "expiry": "",
         "broker": "9b5dc2b3a2f9fa7c",
-        "x": 1390,
+        "x": 1410,
         "y": 140,
         "wires": []
     },
@@ -667,12 +671,29 @@
         "y": 80,
         "wires": [
             [
-                "fadf868a9c969062"
+                "cf21e14fb70acbbd"
             ]
         ]
     },
     {
-        "id": "fadf868a9c969062",
+        "id": "aef1990c37f6bb58",
+        "type": "ioBroker get",
+        "z": "e9de432dbfd2a285",
+        "name": "mqtt-topic",
+        "topic": "0_userdata.0.mqtt-devices.Wandbeleuchtung.topic",
+        "attrname": "mqttTopic",
+        "payloadType": "value",
+        "errOnInvalidState": "true",
+        "x": 1040,
+        "y": 140,
+        "wires": [
+            [
+                "cf21e14fb70acbbd"
+            ]
+        ]
+    },
+    {
+        "id": "cf21e14fb70acbbd",
         "type": "function",
         "z": "e9de432dbfd2a285",
         "name": "parse",
@@ -682,30 +703,29 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1230,
-        "y": 80,
+        "x": 1250,
+        "y": 140,
         "wires": [
             [
-                "eebe17bf033c40b9",
-                "bbe0447bf5cb8f13"
+                "eebe17bf033c40b9"
             ]
         ]
     },
     {
-        "id": "bbe0447bf5cb8f13",
-        "type": "debug",
+        "id": "78b6b1b5dad5965a",
+        "type": "ioBroker get",
         "z": "e9de432dbfd2a285",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1390,
-        "y": 300,
-        "wires": []
+        "name": "mqtt-topic",
+        "topic": "0_userdata.0.mqtt-devices.seitliche_Bettbeleuchtung.topic",
+        "attrname": "mqttTopic",
+        "payloadType": "value",
+        "errOnInvalidState": "true",
+        "x": 1080,
+        "y": 200,
+        "wires": [
+            [
+                "cf21e14fb70acbbd"
+            ]
+        ]
     }
 ]
