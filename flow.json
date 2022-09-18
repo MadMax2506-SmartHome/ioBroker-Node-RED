@@ -8,7 +8,7 @@
         "env": []
     },
     {
-        "id": "43be9f181fabd3e8",
+        "id": "8706d1775ed872de",
         "type": "tab",
         "label": "mqtt",
         "disabled": false,
@@ -910,41 +910,60 @@
         "wires": []
     },
     {
-        "id": "6c4d1adddfb1cb6a",
-        "type": "mqtt in",
-        "z": "43be9f181fabd3e8",
-        "name": "",
-        "topic": "status/#",
-        "qos": "0",
-        "datatype": "json",
-        "broker": "9b5dc2b3a2f9fa7c",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 70,
-        "y": 60,
+        "id": "0e210175c0ca9e61",
+        "type": "ioBroker in",
+        "z": "8706d1775ed872de",
+        "name": "status/deskLightingKeyboard",
+        "topic": "mqtt.0.status.deskLightingKeyboard",
+        "payloadType": "value",
+        "onlyack": "",
+        "func": "all",
+        "gap": "",
+        "fireOnStart": "false",
+        "outFormat": "MQTT",
+        "x": 160,
+        "y": 80,
         "wires": [
             [
-                "5bf22605b46adc1f"
+                "1e495f12dcdee7aa"
             ]
         ]
     },
     {
-        "id": "5bf22605b46adc1f",
-        "type": "function",
-        "z": "43be9f181fabd3e8",
-        "name": "parse",
-        "func": "const { topic, payload } = msg;\nreturn {\n    topic: topic,\n    payload: payload\n};",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 250,
-        "y": 60,
+        "id": "1e495f12dcdee7aa",
+        "type": "debug",
+        "z": "8706d1775ed872de",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 390,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "0296d3d59538300f",
+        "type": "ioBroker in",
+        "z": "8706d1775ed872de",
+        "name": "status/devices",
+        "topic": "mqtt.0.status.devices",
+        "payloadType": "value",
+        "onlyack": "",
+        "func": "all",
+        "gap": "",
+        "fireOnStart": "false",
+        "outFormat": "MQTT",
+        "x": 110,
+        "y": 120,
         "wires": [
-            []
+            [
+                "1e495f12dcdee7aa"
+            ]
         ]
     }
 ]
