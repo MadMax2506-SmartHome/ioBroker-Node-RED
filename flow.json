@@ -1404,7 +1404,7 @@
         "type": "function",
         "z": "8706d1775ed872de",
         "name": "map json",
-        "func": "const { info: { id } , config } = msg.payload;\n\nreturn {\n    objectKey: id,\n    payload: {...config}\n}",
+        "func": "const { info: { deviceId } , config } = msg.payload;\n\nreturn {\n    objectKey: deviceId,\n    payload: {...config}\n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
