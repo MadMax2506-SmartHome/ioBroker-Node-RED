@@ -716,26 +716,28 @@
         "y": 240,
         "wires": [
             [
-                "b21c39a518da8a75"
+                "e3f5fb136850b75e"
             ]
         ]
     },
     {
-        "id": "b21c39a518da8a75",
-        "type": "debug",
+        "id": "e3f5fb136850b75e",
+        "type": "function",
         "z": "5734cb6af7d23702",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 530,
+        "name": "brightness",
+        "func": "const { bri } = msg;\n\nmsg.payload = `brightness: ${bri}`\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
         "y": 240,
-        "wires": []
+        "wires": [
+            [
+                "ced926561b507e7b"
+            ]
+        ]
     },
     {
         "id": "8184ca14a3dd2487",
