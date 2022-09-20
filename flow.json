@@ -427,7 +427,7 @@
         "id": "9b5dc2b3a2f9fa7c",
         "type": "mqtt-broker",
         "name": "",
-        "broker": "localhost",
+        "broker": "192.168.178.150",
         "port": "1883",
         "clientid": "ioBroker node-red",
         "autoConnect": true,
