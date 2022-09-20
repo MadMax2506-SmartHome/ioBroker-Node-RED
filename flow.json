@@ -1118,7 +1118,7 @@
         "id": "0e87eb94338d50e5",
         "type": "amazon-echo-hub",
         "z": "e9de432dbfd2a285",
-        "port": "80",
+        "port": "9999",
         "processinput": "2",
         "discovery": true,
         "x": 110,
