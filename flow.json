@@ -320,14 +320,6 @@
         "icon": "node-red/light.svg"
     },
     {
-        "id": "140dcbb93b137d2d",
-        "type": "ui_tab",
-        "name": "Home",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
-    },
-    {
         "id": "3b0a4ce480b9a89a",
         "type": "ui_base",
         "theme": {
