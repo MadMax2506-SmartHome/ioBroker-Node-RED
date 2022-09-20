@@ -1115,21 +1115,6 @@
         ]
     },
     {
-        "id": "0e87eb94338d50e5",
-        "type": "amazon-echo-hub",
-        "z": "e9de432dbfd2a285",
-        "port": "80",
-        "processinput": "2",
-        "discovery": true,
-        "x": 110,
-        "y": 100,
-        "wires": [
-            [
-                "19b6b90843ad1f70"
-            ]
-        ]
-    },
-    {
         "id": "19b6b90843ad1f70",
         "type": "function",
         "z": "e9de432dbfd2a285",
@@ -1140,7 +1125,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 310,
+        "x": 330,
         "y": 100,
         "wires": [
             [
@@ -1156,7 +1141,7 @@
         "z": "e9de432dbfd2a285",
         "name": "Tastaturbeleuchtung",
         "topic": "Arduino Tastaturbeleuchtung",
-        "x": 520,
+        "x": 540,
         "y": 40,
         "wires": [
             [
@@ -1171,7 +1156,7 @@
         "z": "e9de432dbfd2a285",
         "name": "Wandbeleuchtung",
         "topic": "Arduino Wandbeleuchtung am Bett",
-        "x": 510,
+        "x": 530,
         "y": 100,
         "wires": [
             [
@@ -1186,7 +1171,7 @@
         "z": "e9de432dbfd2a285",
         "name": "seitliche Bettbeleuchtung",
         "topic": "Arduino seitliche Beleuchtung am Bett",
-        "x": 530,
+        "x": 550,
         "y": 160,
         "wires": [
             [
@@ -1200,7 +1185,7 @@
         "type": "subflow:029142ac14ba233b",
         "z": "e9de432dbfd2a285",
         "name": "",
-        "x": 760,
+        "x": 780,
         "y": 40,
         "wires": []
     },
@@ -1209,7 +1194,7 @@
         "type": "subflow:bb9b6a98f8635a55",
         "z": "e9de432dbfd2a285",
         "name": "",
-        "x": 740,
+        "x": 760,
         "y": 100,
         "wires": []
     },
@@ -1218,9 +1203,24 @@
         "type": "subflow:0d47d69ad720d4a1",
         "z": "e9de432dbfd2a285",
         "name": "",
-        "x": 790,
+        "x": 810,
         "y": 160,
         "wires": []
+    },
+    {
+        "id": "b583129d8ce91ee3",
+        "type": "amazon-echo-hub",
+        "z": "e9de432dbfd2a285",
+        "port": "80",
+        "processinput": 0,
+        "discovery": true,
+        "x": 110,
+        "y": 100,
+        "wires": [
+            [
+                "19b6b90843ad1f70"
+            ]
+        ]
     },
     {
         "id": "7a8c5944f4c20677",
