@@ -1119,7 +1119,7 @@
         "type": "amazon-echo-hub",
         "z": "e9de432dbfd2a285",
         "port": "80",
-        "processinput": "1",
+        "processinput": "2",
         "discovery": true,
         "x": 110,
         "y": 100,
