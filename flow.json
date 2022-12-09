@@ -1224,6 +1224,66 @@
         ]
     },
     {
+        "id": "1ed438e8a42f2012",
+        "type": "alexa-local",
+        "z": "e9de432dbfd2a285",
+        "devicename": "TestLicht",
+        "inputtrigger": false,
+        "x": 100,
+        "y": 320,
+        "wires": [
+            [
+                "afad716cc0a9d61b",
+                "6c648cb0f7fc9102"
+            ]
+        ]
+    },
+    {
+        "id": "afad716cc0a9d61b",
+        "type": "function",
+        "z": "e9de432dbfd2a285",
+        "name": "map payload",
+        "func": "return {\n    ...msg,\n    payload: null\n};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 320,
+        "wires": [
+            [
+                "cc8e1031b7d6220b",
+                "6c648cb0f7fc9102"
+            ]
+        ]
+    },
+    {
+        "id": "cc8e1031b7d6220b",
+        "type": "subflow:0d47d69ad720d4a1",
+        "z": "e9de432dbfd2a285",
+        "name": "",
+        "x": 650,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "6c648cb0f7fc9102",
+        "type": "debug",
+        "z": "e9de432dbfd2a285",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 340,
+        "y": 400,
+        "wires": []
+    },
+    {
         "id": "7a8c5944f4c20677",
         "type": "subflow:6e07c8ed867b3ea9",
         "z": "8706d1775ed872de",
