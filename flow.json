@@ -1054,6 +1054,7 @@
         "id": "3212856150f0966d",
         "type": "subflow:c568e9a555f7d908",
         "z": "6e07c8ed867b3ea9",
+        "name": "",
         "x": 1150,
         "y": 160,
         "wires": [
@@ -1089,7 +1090,7 @@
         "type": "function",
         "z": "c568e9a555f7d908",
         "name": "prepare data",
-        "func": "const {\n    objectKey,\n    payload: {\n        status,\n        color,\n        orientation,\n        type,\n        time,\n        brightness\n    }\n} = msg;\n\nreturn [\n    { topic: `${objectKey}.active`, payload: status },\n    { topic: `${objectKey}.animation_time`, payload: time },\n    { topic: `${objectKey}.animation_typ`, payload: type },\n    { topic: `${objectKey}.color`, payload: JSON.stringify(color) },\n    { topic: `${objectKey}.orientation`, payload: orientation },\n    { topic: `${objectKey}.brightness`, payload: brightness }\n];",
+        "func": "const {\n    objectKey,\n    payload: {\n        status,\n        color,\n        orientation,\n        type,\n        time,\n        brightness\n    }\n} = msg;\n\nreturn [\n    { topic: `${objectKey}.active`, payload: status },\n    { topic: `${objectKey}.animation_time`, payload: time },\n    { topic: `${objectKey}.animation_typ`, payload: type },\n    { topic: `${objectKey}.color`, payload: JSON.stringify(color) },\n    { topic: `${objectKey}.orientation`, payload: orientation },\n    { topic: `${objectKey}.brightness`, payload: parseInt(brightness, 10) }\n];",
         "outputs": 6,
         "noerr": 0,
         "initialize": "",
