@@ -1204,19 +1204,6 @@
         ]
     },
     {
-        "id": "bbfa6d6b69be67c7",
-        "type": "amazon-echo-device",
-        "z": "e9de432dbfd2a285",
-        "name": "Video Station",
-        "topic": "Synology",
-        "x": 590,
-        "y": 220,
-        "wires": [
-            []
-        ],
-        "icon": "node-red/leveldb.png"
-    },
-    {
         "id": "7a8c5944f4c20677",
         "type": "subflow:6e07c8ed867b3ea9",
         "z": "8706d1775ed872de",
