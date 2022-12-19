@@ -1208,7 +1208,7 @@
         "type": "alexa-local",
         "z": "e9de432dbfd2a285",
         "devicename": "Test",
-        "inputtrigger": false,
+        "inputtrigger": true,
         "x": 250,
         "y": 300,
         "wires": [
