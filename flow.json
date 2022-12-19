@@ -440,22 +440,6 @@
         "sessionExpiry": ""
     },
     {
-        "id": "a42d0bc4153d23ba",
-        "type": "ui_tab",
-        "name": "Tab 1",
-        "icon": "dashboard",
-        "order": 1
-    },
-    {
-        "id": "585d1fa85ee1c805",
-        "type": "ui_group",
-        "name": "Group 1",
-        "tab": "a42d0bc4153d23ba",
-        "order": 1,
-        "disp": true,
-        "width": 6
-    },
-    {
         "id": "dbdce3880380f4e3",
         "type": "switch",
         "z": "5734cb6af7d23702",
