@@ -1107,12 +1107,13 @@
         "finalize": "",
         "libs": [],
         "x": 330,
-        "y": 100,
+        "y": 120,
         "wires": [
             [
                 "31716c21d3f492c1",
                 "27eb4499b92b570d",
-                "41bc62348c456fd0"
+                "41bc62348c456fd0",
+                "bbfa6d6b69be67c7"
             ]
         ]
     },
@@ -1122,7 +1123,7 @@
         "z": "e9de432dbfd2a285",
         "name": "Tastaturbeleuchtung",
         "topic": "Arduino Tastaturbeleuchtung",
-        "x": 540,
+        "x": 620,
         "y": 40,
         "wires": [
             [
@@ -1137,7 +1138,7 @@
         "z": "e9de432dbfd2a285",
         "name": "Wandbeleuchtung",
         "topic": "Arduino Wandbeleuchtung am Bett",
-        "x": 530,
+        "x": 610,
         "y": 100,
         "wires": [
             [
@@ -1152,7 +1153,7 @@
         "z": "e9de432dbfd2a285",
         "name": "seitliche Bettbeleuchtung",
         "topic": "Arduino seitliche Beleuchtung am Bett",
-        "x": 550,
+        "x": 630,
         "y": 160,
         "wires": [
             [
@@ -1166,7 +1167,7 @@
         "type": "subflow:029142ac14ba233b",
         "z": "e9de432dbfd2a285",
         "name": "",
-        "x": 780,
+        "x": 890,
         "y": 40,
         "wires": []
     },
@@ -1175,7 +1176,7 @@
         "type": "subflow:bb9b6a98f8635a55",
         "z": "e9de432dbfd2a285",
         "name": "",
-        "x": 760,
+        "x": 860,
         "y": 100,
         "wires": []
     },
@@ -1184,7 +1185,7 @@
         "type": "subflow:0d47d69ad720d4a1",
         "z": "e9de432dbfd2a285",
         "name": "",
-        "x": 810,
+        "x": 910,
         "y": 160,
         "wires": []
     },
@@ -1196,12 +1197,25 @@
         "processinput": 0,
         "discovery": true,
         "x": 130,
-        "y": 100,
+        "y": 120,
         "wires": [
             [
                 "19b6b90843ad1f70"
             ]
         ]
+    },
+    {
+        "id": "bbfa6d6b69be67c7",
+        "type": "amazon-echo-device",
+        "z": "e9de432dbfd2a285",
+        "name": "Video Station",
+        "topic": "",
+        "x": 590,
+        "y": 220,
+        "wires": [
+            []
+        ],
+        "icon": "node-red/leveldb.png"
     },
     {
         "id": "7a8c5944f4c20677",
