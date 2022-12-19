@@ -1122,7 +1122,7 @@
         "type": "amazon-echo-device",
         "z": "e9de432dbfd2a285",
         "name": "Tastaturbeleuchtung",
-        "topic": "Arduino Tastaturbeleuchtung",
+        "topic": "Arduino Beleuchtung",
         "x": 620,
         "y": 40,
         "wires": [
@@ -1137,7 +1137,7 @@
         "type": "amazon-echo-device",
         "z": "e9de432dbfd2a285",
         "name": "Wandbeleuchtung",
-        "topic": "Arduino Wandbeleuchtung am Bett",
+        "topic": "Arduino Beleuchtung",
         "x": 610,
         "y": 100,
         "wires": [
@@ -1152,7 +1152,7 @@
         "type": "amazon-echo-device",
         "z": "e9de432dbfd2a285",
         "name": "seitliche Bettbeleuchtung",
-        "topic": "Arduino seitliche Beleuchtung am Bett",
+        "topic": "Arduino Beleuchtung",
         "x": 630,
         "y": 160,
         "wires": [
@@ -1209,7 +1209,7 @@
         "type": "amazon-echo-device",
         "z": "e9de432dbfd2a285",
         "name": "Video Station",
-        "topic": "",
+        "topic": "Synology",
         "x": 590,
         "y": 220,
         "wires": [
