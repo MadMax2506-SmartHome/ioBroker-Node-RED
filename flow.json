@@ -1498,5 +1498,52 @@
                 "bdfdc233c2e293f7"
             ]
         ]
+    },
+    {
+        "id": "6d2c45273c54f68c",
+        "type": "mqtt out",
+        "z": "8706d1775ed872de",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "9b5dc2b3a2f9fa7c",
+        "x": 290,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "e7881d4d084b2366",
+        "type": "inject",
+        "z": "8706d1775ed872de",
+        "name": "set object keys",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "1800",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "5",
+        "topic": "conf/devices",
+        "payload": "list-devices",
+        "payloadType": "str",
+        "x": 120,
+        "y": 520,
+        "wires": [
+            [
+                "6d2c45273c54f68c"
+            ]
+        ]
     }
 ]
